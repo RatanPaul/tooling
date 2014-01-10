@@ -2174,6 +2174,12 @@ global class Api {
         private String[] field_order_type_info = new String[]{'layoutItems','numItems'};
     }
     global class Client {
+        
+        global Client() {
+            this.SessionHeader = new Api.SessionHeader_element();
+            this.SessionHeader.sessionId = UserInfo.getSessionId();
+        }
+        
         global Client(String sessionId) {
             this.SessionHeader = new Api.SessionHeader_element();
             this.SessionHeader.sessionId = sessionId;
