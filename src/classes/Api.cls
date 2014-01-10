@@ -19,10 +19,10 @@ public class Api {
     }
     public class MetadataContainerMember {
         public String Content;
-        public Api.Name ContentEntity;
+        public Name ContentEntity;
         public String ContentEntityId;
         public DateTime LastSyncDate;
-        public Api.MetadataContainer MetadataContainer;
+        public MetadataContainer MetadataContainer;
         public String MetadataContainerId;
         private String[] Content_type_info = new String[]{'Content','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] ContentEntity_type_info = new String[]{'ContentEntity','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -46,7 +46,7 @@ public class Api {
         public String upgradeMessage;
         public String upgradeURL;
         public String userId;
-        public Api.GetUserInfoResult userInfo;
+        public GetUserInfoResult userInfo;
         private String[] metadataServerUrl_type_info = new String[]{'metadataServerUrl','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] passwordExpired_type_info = new String[]{'passwordExpired','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] sandbox_type_info = new String[]{'sandbox','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -61,7 +61,7 @@ public class Api {
     }
     public class MapEntry {
         public String keyDisplayValue;
-        public Api.StateValue value;
+        public StateValue value;
         private String[] keyDisplayValue_type_info = new String[]{'keyDisplayValue','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] value_type_info = new String[]{'value','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
@@ -71,20 +71,20 @@ public class Api {
         public String ApexCode;
         public String ApexProfiling;
         public String Callout;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public String Database;
         public DateTime ExpirationDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
-        public Api.User_x Scope;
+        public User_x Scope;
         public String ScopeId;
         public String System_x;
         public DateTime SystemModstamp;
-        public Api.Name TracedEntity;
+        public Name TracedEntity;
         public String TracedEntityId;
         public String Validation;
         public String Visualforce;
@@ -115,16 +115,16 @@ public class Api {
     }
     public class IDEPerspective {
         public String Content;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public String Name;
         public DateTime SystemModstamp;
-        public Api.User_x User_x;
+        public User_x User_x;
         public String UserId;
         private String[] Content_type_info = new String[]{'Content','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] CreatedBy_type_info = new String[]{'CreatedBy','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -142,7 +142,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'Content','CreatedBy','CreatedById','CreatedDate','IsDeleted','LastModifiedBy','LastModifiedById','LastModifiedDate','Name','SystemModstamp','User_x','UserId'};
     }
     public class describeWorkitemActionsResponse_element {
-        public Api.DescribeWorkitemActionResult[] result;
+        public DescribeWorkitemActionResult[] result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -156,7 +156,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'name','type_x'};
     }
     public class SetValue {
-        public Api.StateValue[] value;
+        public StateValue[] value;
         private String[] value_type_info = new String[]{'value','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'value'};
@@ -170,7 +170,7 @@ public class Api {
     public class ProcessResult {
         public String[] actorIds;
         public String entityId;
-        public Api.Error[] errors;
+        public Error[] errors;
         public String instanceId;
         public String instanceStatus;
         public String[] newWorkitemIds;
@@ -186,7 +186,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'actorIds','entityId','errors','instanceId','instanceStatus','newWorkitemIds','success'};
     }
     public class ListValue {
-        public Api.StateValue[] value;
+        public StateValue[] value;
         private String[] value_type_info = new String[]{'value','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'value'};
@@ -212,7 +212,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'controllingField','sorted'};
     }
     public class ExternalConstructor {
-        public Api.Parameter[] parameters;
+        public Parameter[] parameters;
         private String[] parameters_type_info = new String[]{'parameters','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'parameters'};
@@ -232,20 +232,20 @@ public class Api {
     public class ApexClassMember {
         public String Body;
         public String Content;
-        public Api.ApexClass ContentEntity;
+        public ApexClass ContentEntity;
         public String ContentEntityId;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public DateTime LastSyncDate;
-        public Api.ApexClassMetadata Metadata;
-        public Api.MetadataContainer MetadataContainer;
+        public ApexClassMetadata Metadata;
+        public MetadataContainer MetadataContainer;
         public String MetadataContainerId;
-        public Api.SymbolTable SymbolTable;
+        public SymbolTable SymbolTable;
         public DateTime SystemModstamp;
         private String[] Body_type_info = new String[]{'Body','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] Content_type_info = new String[]{'Content','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -279,7 +279,7 @@ public class Api {
     }
     public class HeapDump {
         public String className;
-        public Api.TypeExtent[] extents;
+        public TypeExtent[] extents;
         public DateTime heapDumpDate;
         public String namespace;
         private String[] className_type_info = new String[]{'className','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -292,18 +292,18 @@ public class Api {
     public class ApexPageMember {
         public String Body;
         public String Content;
-        public Api.ApexPage ContentEntity;
+        public ApexPage ContentEntity;
         public String ContentEntityId;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public DateTime LastSyncDate;
-        public Api.ApexPageMetadata Metadata;
-        public Api.MetadataContainer MetadataContainer;
+        public ApexPageMetadata Metadata;
+        public MetadataContainer MetadataContainer;
         public String MetadataContainerId;
         public DateTime SystemModstamp;
         private String[] Body_type_info = new String[]{'Body','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -338,7 +338,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'field','operation','value','valueField'};
     }
     public class QueryResultMetadata {
-        public Api.QueryResultColumnMetadata[] columnMetadata;
+        public QueryResultColumnMetadata[] columnMetadata;
         public String entityName;
         public Boolean groupBy;
         public Boolean idSelected;
@@ -405,13 +405,13 @@ public class Api {
         public Double ApiVersion;
         public String ControllerKey;
         public String ControllerType;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public String Description;
         public Boolean IsAvailableInTouch;
         public Boolean IsConfirmationTokenRequired;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public String Markup;
@@ -440,14 +440,14 @@ public class Api {
         private String[] field_order_type_info = new String[]{'ApiVersion','ControllerKey','ControllerType','CreatedBy','CreatedById','CreatedDate','Description','IsAvailableInTouch','IsConfirmationTokenRequired','LastModifiedBy','LastModifiedById','LastModifiedDate','Markup','MasterLabel','Name','NamespacePrefix','SystemModstamp'};
     }
     public class queryResponse_element {
-        public Api.QueryResult result;
+        public QueryResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class RecordTypePicklist {
         public String picklistName;
-        public Api.PicklistEntry[] picklistValues;
+        public PicklistEntry[] picklistValues;
         private String[] picklistName_type_info = new String[]{'picklistName','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] picklistValues_type_info = new String[]{'picklistValues','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
@@ -480,20 +480,20 @@ public class Api {
     public class ApexExecutionOverlayAction {
         public String ActionScript;
         public String ActionScriptType;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
-        public Api.Name ExecutableEntity;
+        public Name ExecutableEntity;
         public String ExecutableEntityId;
         public DateTime ExpirationDate;
         public Boolean IsDeleted;
         public Boolean IsDumpingHeap;
         public Integer Iteration;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public Integer Line;
-        public Api.User_x Scope;
+        public User_x Scope;
         public String ScopeId;
         public DateTime SystemModstamp;
         private String[] ActionScript_type_info = new String[]{'ActionScript','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -530,17 +530,17 @@ public class Api {
         private String[] field_order_type_info = new String[]{'workitemIds'};
     }
     public class loginResponse_element {
-        public Api.LoginResult result;
+        public LoginResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class ApexOrgWideCoverage {
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public Integer PercentCovered;
@@ -650,7 +650,7 @@ public class Api {
         public String entityTypeName;
         public String nextRecordsUrl;
         public String queryLocator;
-        public Api.sObject_x[] records;
+        public sObject_x[] records;
         public Integer size;
         public Integer totalSize;
         private String[] done_type_info = new String[]{'done','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -679,7 +679,7 @@ public class Api {
         public DateTime LastModifiedDate;
         public String Location;
         public Integer LogLength;
-        public Api.Name LogUser;
+        public Name LogUser;
         public String LogUserId;
         public String Operation;
         public String Request;
@@ -714,8 +714,8 @@ public class Api {
         private String[] field_order_type_info = new String[]{'displayName'};
     }
     public class User_x {
-        public Api.QueryResult DelegatedUsers;
-        public Api.QueryResult UserPreferences;
+        public QueryResult DelegatedUsers;
+        public QueryResult UserPreferences;
         public String WorkspaceId;
         private String[] DelegatedUsers_type_info = new String[]{'DelegatedUsers','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] UserPreferences_type_info = new String[]{'UserPreferences','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -728,7 +728,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{};
     }
     public class describeGlobalResponse_element {
-        public Api.DescribeGlobalResult result;
+        public DescribeGlobalResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -737,11 +737,11 @@ public class Api {
         public Double ApiVersion;
         public String ControllerKey;
         public String ControllerType;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public String Description;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public String Markup;
@@ -769,7 +769,7 @@ public class Api {
     }
     public class DescribeLayoutButton {
         public Boolean custom;
-        public Api.DescribeIconResult[] icons;
+        public DescribeIconResult[] icons;
         public String label;
         public String name;
         private String[] custom_type_info = new String[]{'custom','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -787,7 +787,7 @@ public class Api {
         public String address;
         public Integer size;
         public String[] symbols;
-        public Api.StateValue value;
+        public StateValue value;
         private String[] address_type_info = new String[]{'address','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] size_type_info = new String[]{'size','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] symbols_type_info = new String[]{'symbols','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -798,7 +798,7 @@ public class Api {
     public class DescribeLayoutItem {
         public Boolean editable;
         public String label;
-        public Api.DescribeLayoutComponent[] layoutComponents;
+        public DescribeLayoutComponent[] layoutComponents;
         public Boolean placeholder;
         public Boolean required;
         private String[] editable_type_info = new String[]{'editable','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -820,13 +820,13 @@ public class Api {
         private String[] field_order_type_info = new String[]{'allowFieldTruncation'};
     }
     public class getDeletedResponse_element {
-        public Api.GetDeletedResult result;
+        public GetDeletedResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class SaveResult {
-        public Api.Error[] errors;
+        public Error[] errors;
         public String id;
         public Boolean success;
         private String[] errors_type_info = new String[]{'errors','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -836,22 +836,22 @@ public class Api {
         private String[] field_order_type_info = new String[]{'errors','id','success'};
     }
     public class deleteResponse_element {
-        public Api.DeleteResult[] result;
+        public DeleteResult[] result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class ApexTestResult {
-        public Api.ApexClass ApexClass;
+        public ApexClass ApexClass;
         public String ApexClassId;
-        public Api.ApexLog ApexLog;
+        public ApexLog ApexLog;
         public String ApexLogId;
-        public Api.AsyncApexJob AsyncApexJob;
+        public AsyncApexJob AsyncApexJob;
         public String AsyncApexJobId;
         public String Message;
         public String MethodName;
         public String Outcome;
-        public Api.ApexTestQueueItem QueueItem;
+        public ApexTestQueueItem QueueItem;
         public String QueueItemId;
         public String StackTrace;
         public DateTime SystemModstamp;
@@ -874,9 +874,9 @@ public class Api {
         private String[] field_order_type_info = new String[]{'ApexClass','ApexClassId','ApexLog','ApexLogId','AsyncApexJob','AsyncApexJobId','Message','MethodName','Outcome','QueueItem','QueueItemId','StackTrace','SystemModstamp','TestTimestamp'};
     }
     public class ApexTestQueueItem {
-        public Api.ApexClass ApexClass;
+        public ApexClass ApexClass;
         public String ApexClassId;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public String ExtendedStatus;
@@ -896,15 +896,15 @@ public class Api {
         private String[] field_order_type_info = new String[]{'ApexClass','ApexClassId','CreatedBy','CreatedById','CreatedDate','ExtendedStatus','ParentJobId','Status','SystemModstamp'};
     }
     public class ApexCodeCoverageAggregate {
-        public Api.Name ApexClassOrTrigger;
+        public Name ApexClassOrTrigger;
         public String ApexClassOrTriggerId;
-        public Api.Coverage Coverage;
+        public Coverage Coverage;
         public DateTime CoverageLastModifiedDate;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public Integer NumLinesCovered;
@@ -942,15 +942,15 @@ public class Api {
         private String[] field_order_type_info = new String[]{'argTypes','returnType'};
     }
     public class update_element {
-        public Api.sObject_x[] sObjects;
+        public sObject_x[] sObjects;
         private String[] sObjects_type_info = new String[]{'sObjects','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'sObjects'};
     }
     public class SOQLResult {
         public String queryError;
-        public Api.QueryResultMetadata queryMetadata;
-        public Api.MapValue[] queryResult;
+        public QueryResultMetadata queryMetadata;
+        public MapValue[] queryResult;
         private String[] queryError_type_info = new String[]{'queryError','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] queryMetadata_type_info = new String[]{'queryMetadata','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] queryResult_type_info = new String[]{'queryResult','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -964,10 +964,10 @@ public class Api {
         private String[] field_order_type_info = new String[]{'value'};
     }
     public class AsyncApexJob {
-        public Api.ApexClass ApexClass;
+        public ApexClass ApexClass;
         public String ApexClassId;
         public DateTime CompletedDate;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public String ExtendedStatus;
@@ -1001,7 +1001,7 @@ public class Api {
     }
     public class ExternalSymbol {
         public String name;
-        public Api.Position[] references;
+        public Position[] references;
         private String[] name_type_info = new String[]{'name','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] references_type_info = new String[]{'references','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
@@ -1025,7 +1025,7 @@ public class Api {
     }
     public class ApexClassMetadata {
         public Double apiVersion;
-        public Api.PackageVersionMetadata[] packageVersions;
+        public PackageVersionMetadata[] packageVersions;
         public String status;
         private String[] apiVersion_type_info = new String[]{'apiVersion','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] packageVersions_type_info = new String[]{'packageVersions','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -1034,7 +1034,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'apiVersion','packageVersions','status'};
     }
     public class executeAnonymousResponse_element {
-        public Api.ExecuteAnonymousResult result;
+        public ExecuteAnonymousResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -1049,11 +1049,11 @@ public class Api {
         public Double ApiVersion;
         public String Body;
         public Double BodyCrc;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsValid;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public Integer LengthWithoutComments;
@@ -1098,7 +1098,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'ApiVersion','Body','BodyCrc','CreatedBy','CreatedById','CreatedDate','IsValid','LastModifiedBy','LastModifiedById','LastModifiedDate','LengthWithoutComments','Name','NamespacePrefix','Status','SystemModstamp','TableEnumOrId','UsageAfterDelete','UsageAfterInsert','UsageAfterUndelete','UsageAfterUpdate','UsageBeforeDelete','UsageBeforeInsert','UsageBeforeUpdate','UsageIsBulk'};
     }
     public class invalidateSessionsResponse_element {
-        public Api.InvalidateSessionsResult[] result;
+        public InvalidateSessionsResult[] result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -1110,19 +1110,19 @@ public class Api {
         private String[] field_order_type_info = new String[]{'ids'};
     }
     public class DescribeLayoutButtonSection {
-        public Api.DescribeLayoutButton[] detailButtons;
+        public DescribeLayoutButton[] detailButtons;
         private String[] detailButtons_type_info = new String[]{'detailButtons','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'detailButtons'};
     }
     public class Constructor {
-        public Api.Parameter[] parameters;
+        public Parameter[] parameters;
         private String[] parameters_type_info = new String[]{'parameters','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'parameters'};
     }
     public class updateResponse_element {
-        public Api.SaveResult[] result;
+        public SaveResult[] result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -1150,14 +1150,14 @@ public class Api {
         private String[] field_order_type_info = new String[]{'timestamp'};
     }
     public class retrieveResponse_element {
-        public Api.sObject_x[] result;
+        public sObject_x[] result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class DescribeWorkitemActionResult {
-        public Api.AllowedWorkitemAction[] actions;
-        public Api.Error[] errors;
+        public AllowedWorkitemAction[] actions;
+        public Error[] errors;
         public Boolean success;
         public String targetObjectId;
         public String workitemId;
@@ -1170,7 +1170,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'actions','errors','success','targetObjectId','workitemId'};
     }
     public class queryAllResponse_element {
-        public Api.QueryResult result;
+        public QueryResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -1182,7 +1182,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'ArrayList'};
     }
     public class create_element {
-        public Api.sObject_x[] sObjects;
+        public sObject_x[] sObjects;
         private String[] sObjects_type_info = new String[]{'sObjects','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'sObjects'};
@@ -1190,18 +1190,18 @@ public class Api {
     public class ApexComponentMember {
         public String Body;
         public String Content;
-        public Api.ApexComponent ContentEntity;
+        public ApexComponent ContentEntity;
         public String ContentEntityId;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public DateTime LastSyncDate;
-        public Api.ApexComponentMetadata Metadata;
-        public Api.MetadataContainer MetadataContainer;
+        public ApexComponentMetadata Metadata;
+        public MetadataContainer MetadataContainer;
         public String MetadataContainerId;
         public DateTime SystemModstamp;
         private String[] Body_type_info = new String[]{'Body','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -1225,16 +1225,16 @@ public class Api {
     }
     public class IDEWorkspace {
         public String Content;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public String Name;
         public DateTime SystemModstamp;
-        public Api.User_x User_x;
+        public User_x User_x;
         public String UserId;
         private String[] Content_type_info = new String[]{'Content','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] CreatedBy_type_info = new String[]{'CreatedBy','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -1252,7 +1252,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'Content','CreatedBy','CreatedById','CreatedDate','IsDeleted','LastModifiedBy','LastModifiedById','LastModifiedDate','Name','SystemModstamp','User_x','UserId'};
     }
     public class createResponse_element {
-        public Api.SaveResult[] result;
+        public SaveResult[] result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -1260,8 +1260,8 @@ public class Api {
     public class TypeExtent {
         public String collectionType;
         public Integer count;
-        public Api.AttributeDefinition[] definition;
-        public Api.HeapAddress[] extent;
+        public AttributeDefinition[] definition;
+        public HeapAddress[] extent;
         public Integer totalSize;
         public String typeName;
         private String[] collectionType_type_info = new String[]{'collectionType','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -1288,7 +1288,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'commentsRequired','label','name','nextOwnerRequired','versionRequired'};
     }
     public class getServerTimestampResponse_element {
-        public Api.GetServerTimestampResult result;
+        public GetServerTimestampResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -1297,7 +1297,7 @@ public class Api {
         public Double apiVersion;
         public String description;
         public String label;
-        public Api.PackageVersionMetadata[] packageVersions;
+        public PackageVersionMetadata[] packageVersions;
         private String[] apiVersion_type_info = new String[]{'apiVersion','urn:tooling.soap.sforce.com',null,'0','1','false'};
         private String[] description_type_info = new String[]{'description','urn:tooling.soap.sforce.com',null,'0','1','false'};
         private String[] label_type_info = new String[]{'label','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -1307,19 +1307,19 @@ public class Api {
     }
     public class ContainerAsyncRequest {
         public String CompilerErrors;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public String ErrorMsg;
         public Boolean IsCheckOnly;
         public Boolean IsDeleted;
         public Boolean IsRunTests;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
-        public Api.MetadataContainer MetadataContainer;
+        public MetadataContainer MetadataContainer;
         public String MetadataContainerId;
-        public Api.MetadataContainerMember MetadataContainerMember;
+        public MetadataContainerMember MetadataContainerMember;
         public String MetadataContainerMemberId;
         public String State;
         public DateTime SystemModstamp;
@@ -1352,16 +1352,16 @@ public class Api {
         private String[] field_order_type_info = new String[]{'deletedDate','id'};
     }
     public class ApexCodeCoverage {
-        public Api.Name ApexClassOrTrigger;
+        public Name ApexClassOrTrigger;
         public String ApexClassOrTriggerId;
-        public Api.ApexClass ApexTestClass;
+        public ApexClass ApexTestClass;
         public String ApexTestClassId;
-        public Api.Coverage Coverage;
-        public Api.User_x CreatedBy;
+        public Coverage Coverage;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public Integer NumLinesCovered;
@@ -1388,7 +1388,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'ApexClassOrTrigger','ApexClassOrTriggerId','ApexTestClass','ApexTestClassId','Coverage','CreatedBy','CreatedById','CreatedDate','IsDeleted','LastModifiedBy','LastModifiedById','LastModifiedDate','NumLinesCovered','NumLinesUncovered','SystemModstamp','TestMethodName'};
     }
     public class ComplexQueryResultColumnMetadata {
-        public Api.QueryResultColumnMetadata[] joinColumns;
+        public QueryResultColumnMetadata[] joinColumns;
         private String[] joinColumns_type_info = new String[]{'joinColumns','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'joinColumns'};
@@ -1399,7 +1399,7 @@ public class Api {
         public Boolean confirmationTokenRequired;
         public String description;
         public String label;
-        public Api.PackageVersionMetadata[] packageVersions;
+        public PackageVersionMetadata[] packageVersions;
         private String[] apiVersion_type_info = new String[]{'apiVersion','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] availableInTouch_type_info = new String[]{'availableInTouch','urn:tooling.soap.sforce.com',null,'0','1','false'};
         private String[] confirmationTokenRequired_type_info = new String[]{'confirmationTokenRequired','urn:tooling.soap.sforce.com',null,'0','1','false'};
@@ -1420,7 +1420,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'majorNumber','minorNumber','namespace'};
     }
     public class getUpdatedResponse_element {
-        public Api.GetUpdatedResult result;
+        public GetUpdatedResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -1438,7 +1438,7 @@ public class Api {
     public class CustomField {
         public String DeveloperName;
         public String FullName;
-        public Api.CustomFieldMetadata Metadata;
+        public CustomFieldMetadata Metadata;
         public String NamespacePrefix;
         public String TableEnumOrId;
         private String[] DeveloperName_type_info = new String[]{'DeveloperName','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -1470,7 +1470,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'majorNumber','minorNumber','namespace'};
     }
     public class GetDeletedResult {
-        public Api.DeletedRecord[] deletedRecords;
+        public DeletedRecord[] deletedRecords;
         public DateTime earliestDateAvailable;
         public DateTime latestDateCovered;
         private String[] deletedRecords_type_info = new String[]{'deletedRecords','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -1482,7 +1482,7 @@ public class Api {
     public class DescribeGlobalResult {
         public String encoding;
         public Integer maxBatchSize;
-        public Api.DescribeGlobalSObjectResult[] sobjects;
+        public DescribeGlobalSObjectResult[] sobjects;
         private String[] encoding_type_info = new String[]{'encoding','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] maxBatchSize_type_info = new String[]{'maxBatchSize','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] sobjects_type_info = new String[]{'sobjects','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -1498,11 +1498,11 @@ public class Api {
         public Integer BodyLength;
         public String CacheControl;
         public String ContentType;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public String Description;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public String Name;
@@ -1528,7 +1528,7 @@ public class Api {
     public class DescribeLayoutSection {
         public Integer columns;
         public String heading;
-        public Api.DescribeLayoutRow[] layoutRows;
+        public DescribeLayoutRow[] layoutRows;
         public Integer rows;
         public Boolean useCollapsibleSection;
         public Boolean useHeading;
@@ -1543,7 +1543,7 @@ public class Api {
     }
     public class ApexTriggerMetadata {
         public Double apiVersion;
-        public Api.PackageVersionMetadata[] packageVersions;
+        public PackageVersionMetadata[] packageVersions;
         public String status;
         private String[] apiVersion_type_info = new String[]{'apiVersion','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] packageVersions_type_info = new String[]{'packageVersions','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -1552,10 +1552,10 @@ public class Api {
         private String[] field_order_type_info = new String[]{'apiVersion','packageVersions','status'};
     }
     public class Symbol {
-        public Api.Position location;
+        public Position location;
         public String[] modifiers;
         public String name;
-        public Api.Position[] references;
+        public Position[] references;
         public String type_x;
         private String[] location_type_info = new String[]{'location','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] modifiers_type_info = new String[]{'modifiers','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -1570,7 +1570,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{};
     }
     public class PackageVersionHeader_element {
-        public Api.PackageVersion[] packageVersions;
+        public PackageVersion[] packageVersions;
         private String[] packageVersions_type_info = new String[]{'packageVersions','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'packageVersions'};
@@ -1594,7 +1594,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'sObjectType','start','end_x'};
     }
     public class upsertResponse_element {
-        public Api.UpsertResult[] result;
+        public UpsertResult[] result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
@@ -1628,7 +1628,7 @@ public class Api {
         public Boolean namePointing;
         public Boolean nillable;
         public Boolean permissionable;
-        public Api.PicklistEntry[] picklistValues;
+        public PicklistEntry[] picklistValues;
         public Integer precision;
         public String[] referenceTo;
         public String relationshipName;
@@ -1698,20 +1698,20 @@ public class Api {
         private String[] field_order_type_info = new String[]{};
     }
     public class describeSObjectsResponse_element {
-        public Api.DescribeSObjectResult[] result;
+        public DescribeSObjectResult[] result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class getUserInfoResponse_element {
-        public Api.GetUserInfoResult result;
+        public GetUserInfoResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class UpsertResult {
         public Boolean created;
-        public Api.Error[] errors;
+        public Error[] errors;
         public String id;
         public Boolean success;
         private String[] created_type_info = new String[]{'created','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -1722,21 +1722,21 @@ public class Api {
         private String[] field_order_type_info = new String[]{'created','errors','id','success'};
     }
     public class setPasswordResponse_element {
-        public Api.SetPasswordResult result;
+        public SetPasswordResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class DescribeSObjectResult {
         public Boolean activateable;
-        public Api.ChildRelationship[] childRelationships;
+        public ChildRelationship[] childRelationships;
         public Boolean createable;
         public Boolean custom;
         public Boolean customSetting;
         public Boolean deletable;
         public Boolean deprecatedAndHidden;
         public Boolean feedEnabled;
-        public Api.Field[] fields;
+        public Field[] fields;
         public String keyPrefix;
         public String label;
         public String labelPlural;
@@ -1746,7 +1746,7 @@ public class Api {
         public Boolean mergeable;
         public String name;
         public Boolean queryable;
-        public Api.RecordTypeInfo[] recordTypeInfos;
+        public RecordTypeInfo[] recordTypeInfos;
         public Boolean replicateable;
         public Boolean retrieveable;
         public Boolean searchLayoutable;
@@ -1785,7 +1785,7 @@ public class Api {
     }
     public class ApexResult {
         public String apexError;
-        public Api.ExecuteAnonymousResult apexExecutionResult;
+        public ExecuteAnonymousResult apexExecutionResult;
         private String[] apexError_type_info = new String[]{'apexError','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apexExecutionResult_type_info = new String[]{'apexExecutionResult','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
@@ -1796,7 +1796,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{};
     }
     public class InvalidateSessionsResult {
-        public Api.Error[] errors;
+        public Error[] errors;
         public Boolean success;
         private String[] errors_type_info = new String[]{'errors','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] success_type_info = new String[]{'success','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -1870,7 +1870,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'active','defaultValue','label','validFor','value'};
     }
     public class MapValue {
-        public Api.MapEntry[] entry;
+        public MapEntry[] entry;
         private String[] entry_type_info = new String[]{'entry','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'entry'};
@@ -1879,20 +1879,20 @@ public class Api {
         public Double ApiVersion;
         public String Body;
         public Double BodyCrc;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public String FullName;
         public Boolean IsValid;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public Integer LengthWithoutComments;
-        public Api.ApexClassMetadata Metadata;
+        public ApexClassMetadata Metadata;
         public String Name;
         public String NamespacePrefix;
         public String Status;
-        public Api.SymbolTable SymbolTable;
+        public SymbolTable SymbolTable;
         public DateTime SystemModstamp;
         private String[] ApiVersion_type_info = new String[]{'ApiVersion','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] Body_type_info = new String[]{'Body','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -1938,27 +1938,27 @@ public class Api {
     public class ApexExecutionOverlayResult {
         public String ActionScript;
         public String ActionScriptType;
-        public Api.ApexResult ApexResult;
+        public ApexResult ApexResult;
         public String ClassName;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public DateTime ExpirationDate;
-        public Api.HeapDump HeapDump;
+        public HeapDump HeapDump;
         public Boolean IsDeleted;
         public Boolean IsDumpingHeap;
         public Integer Iteration;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public Integer Line;
         public String Namespace;
         public Integer OverlayResultLength;
-        public Api.User_x RequestedBy;
+        public User_x RequestedBy;
         public String RequestedById;
-        public Api.SOQLResult SOQLResult;
+        public SOQLResult SOQLResult;
         public DateTime SystemModstamp;
-        public Api.Name User_x;
+        public Name User_x;
         public String UserId;
         private String[] ActionScript_type_info = new String[]{'ActionScript','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] ActionScriptType_type_info = new String[]{'ActionScriptType','urn:tooling.soap.sforce.com',null,'0','1','true'};
@@ -2020,7 +2020,7 @@ public class Api {
         public Integer length;
         public String maskChar;
         public String maskType;
-        public Api.Picklist picklist;
+        public Picklist picklist;
         public Boolean populateExistingRows;
         public Integer precision;
         public String referenceTo;
@@ -2034,7 +2034,7 @@ public class Api {
         public Integer startingNumber;
         public Boolean stripMarkup;
         public String summarizedField;
-        public Api.FilterItem[] summaryFilterItems;
+        public FilterItem[] summaryFilterItems;
         public String summaryForeignKey;
         public String summaryOperation;
         public Boolean trackFeedHistory;
@@ -2092,13 +2092,13 @@ public class Api {
         private String[] field_order_type_info = new String[]{'caseSensitive','customDataType','defaultValue','deleteConstraint','deprecated','description','displayFormat','escapeMarkup','externalDeveloperName','externalId','formula','formulaTreatBlanksAs','inlineHelpText','isFilteringDisabled','isNameField','isSortingDisabled','label','length','maskChar','maskType','picklist','populateExistingRows','precision','referenceTo','relationshipLabel','relationshipName','relationshipOrder','reparentableMasterDetail','required','restrictedAdminField','scale','startingNumber','stripMarkup','summarizedField','summaryFilterItems','summaryForeignKey','summaryOperation','trackFeedHistory','trackHistory','trackTrending','type_x','unique','visibleLines','writeRequiresMasterRead'};
     }
     public class describeSObjectResponse_element {
-        public Api.DescribeSObjectResult result;
+        public DescribeSObjectResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class DeleteResult {
-        public Api.Error[] errors;
+        public Error[] errors;
         public String id;
         public Boolean success;
         private String[] errors_type_info = new String[]{'errors','urn:tooling.soap.sforce.com',null,'0','-1','false'};
@@ -2130,25 +2130,25 @@ public class Api {
         private String[] field_order_type_info = new String[]{'ids','latestDateCovered'};
     }
     public class queryMoreResponse_element {
-        public Api.QueryResult result;
+        public QueryResult result;
         private String[] result_type_info = new String[]{'result','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'result'};
     }
     public class upsert_element {
         public String fieldName;
-        public Api.sObject_x[] entities;
+        public sObject_x[] entities;
         private String[] fieldName_type_info = new String[]{'fieldName','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] entities_type_info = new String[]{'entities','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'fieldName','entities'};
     }
     public class MetadataContainer {
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public String Name;
@@ -2166,7 +2166,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'CreatedBy','CreatedById','CreatedDate','IsDeleted','LastModifiedBy','LastModifiedById','LastModifiedDate','Name','SystemModstamp'};
     }
     public class DescribeLayoutRow {
-        public Api.DescribeLayoutItem[] layoutItems;
+        public DescribeLayoutItem[] layoutItems;
         public Integer numItems;
         private String[] layoutItems_type_info = new String[]{'layoutItems','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] numItems_type_info = new String[]{'numItems','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -2181,13 +2181,13 @@ public class Api {
         public String clientCert_x;
         public String clientCertPasswd_x;
         public Integer timeout_x;
-        public Api.CallOptions_element CallOptions;
-        public Api.DisableFeedTrackingHeader_element DisableFeedTrackingHeader;
-        public Api.DebuggingHeader_element DebuggingHeader;
-        public Api.AllowFieldTruncationHeader_element AllowFieldTruncationHeader;
-        public Api.SessionHeader_element SessionHeader;
-        public Api.PackageVersionHeader_element PackageVersionHeader;
-        public Api.DebuggingInfo_element DebuggingInfo;
+        public CallOptions_element CallOptions;
+        public DisableFeedTrackingHeader_element DisableFeedTrackingHeader;
+        public DebuggingHeader_element DebuggingHeader;
+        public AllowFieldTruncationHeader_element AllowFieldTruncationHeader;
+        public SessionHeader_element SessionHeader;
+        public PackageVersionHeader_element PackageVersionHeader;
+        public DebuggingInfo_element DebuggingInfo;
         private String CallOptions_hns = 'CallOptions=urn:tooling.soap.sforce.com';
         private String DisableFeedTrackingHeader_hns = 'DisableFeedTrackingHeader=urn:tooling.soap.sforce.com';
         private String DebuggingHeader_hns = 'DebuggingHeader=urn:tooling.soap.sforce.com';
@@ -2196,13 +2196,13 @@ public class Api {
         private String PackageVersionHeader_hns = 'PackageVersionHeader=urn:tooling.soap.sforce.com';
         private String DebuggingInfo_hns = 'DebuggingInfo=urn:tooling.soap.sforce.com';
         private String[] ns_map_type_info = new String[]{'urn:tooling.soap.sforce.com', 'Api'};
-        public Api.sObject_x[] retrieve_x(String select_x,String type_x,String[] ids) {
-            Api.retrieve_element request_x = new Api.retrieve_element();
-            Api.retrieveResponse_element response_x;
+        public sObject_x[] retrieve_x(String select_x,String type_x,String[] ids) {
+            retrieve_element request_x = new retrieve_element();
+            retrieveResponse_element response_x;
             request_x.select_x = select_x;
             request_x.type_x = type_x;
             request_x.ids = ids;
-            Map<String, Api.retrieveResponse_element> response_map_x = new Map<String, Api.retrieveResponse_element>();
+            Map<String, retrieveResponse_element> response_map_x = new Map<String, retrieveResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2214,15 +2214,15 @@ public class Api {
               'retrieve',
               'urn:tooling.soap.sforce.com',
               'retrieveResponse',
-              'Api.retrieveResponse_element'}
+              'retrieveResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.DescribeGlobalResult describeGlobal() {
-            Api.describeGlobal_element request_x = new Api.describeGlobal_element();
-            Api.describeGlobalResponse_element response_x;
-            Map<String, Api.describeGlobalResponse_element> response_map_x = new Map<String, Api.describeGlobalResponse_element>();
+        public DescribeGlobalResult describeGlobal() {
+            describeGlobal_element request_x = new describeGlobal_element();
+            describeGlobalResponse_element response_x;
+            Map<String, describeGlobalResponse_element> response_map_x = new Map<String, describeGlobalResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2234,16 +2234,16 @@ public class Api {
               'describeGlobal',
               'urn:tooling.soap.sforce.com',
               'describeGlobalResponse',
-              'Api.describeGlobalResponse_element'}
+              'describeGlobalResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.QueryResult queryMore(String queryLocator) {
-            Api.queryMore_element request_x = new Api.queryMore_element();
-            Api.queryMoreResponse_element response_x;
+        public QueryResult queryMore(String queryLocator) {
+            queryMore_element request_x = new queryMore_element();
+            queryMoreResponse_element response_x;
             request_x.queryLocator = queryLocator;
-            Map<String, Api.queryMoreResponse_element> response_map_x = new Map<String, Api.queryMoreResponse_element>();
+            Map<String, queryMoreResponse_element> response_map_x = new Map<String, queryMoreResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2255,16 +2255,16 @@ public class Api {
               'queryMore',
               'urn:tooling.soap.sforce.com',
               'queryMoreResponse',
-              'Api.queryMoreResponse_element'}
+              'queryMoreResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.DescribeSObjectResult describeSObject(String type_x) {
-            Api.describeSObject_element request_x = new Api.describeSObject_element();
-            Api.describeSObjectResponse_element response_x;
+        public DescribeSObjectResult describeSObject(String type_x) {
+            describeSObject_element request_x = new describeSObject_element();
+            describeSObjectResponse_element response_x;
             request_x.type_x = type_x;
-            Map<String, Api.describeSObjectResponse_element> response_map_x = new Map<String, Api.describeSObjectResponse_element>();
+            Map<String, describeSObjectResponse_element> response_map_x = new Map<String, describeSObjectResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2276,15 +2276,15 @@ public class Api {
               'describeSObject',
               'urn:tooling.soap.sforce.com',
               'describeSObjectResponse',
-              'Api.describeSObjectResponse_element'}
+              'describeSObjectResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
         public void logout() {
-            Api.logout_element request_x = new Api.logout_element();
-            Api.logoutResponse_element response_x;
-            Map<String, Api.logoutResponse_element> response_map_x = new Map<String, Api.logoutResponse_element>();
+            logout_element request_x = new logout_element();
+            logoutResponse_element response_x;
+            Map<String, logoutResponse_element> response_map_x = new Map<String, logoutResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2296,16 +2296,16 @@ public class Api {
               'logout',
               'urn:tooling.soap.sforce.com',
               'logoutResponse',
-              'Api.logoutResponse_element'}
+              'logoutResponse_element'}
             );
             response_x = response_map_x.get('response_x');
         }
-        public Api.SetPasswordResult setPassword(String userId,String password) {
-            Api.setPassword_element request_x = new Api.setPassword_element();
-            Api.setPasswordResponse_element response_x;
+        public SetPasswordResult setPassword(String userId,String password) {
+            setPassword_element request_x = new setPassword_element();
+            setPasswordResponse_element response_x;
             request_x.userId = userId;
             request_x.password = password;
-            Map<String, Api.setPasswordResponse_element> response_map_x = new Map<String, Api.setPasswordResponse_element>();
+            Map<String, setPasswordResponse_element> response_map_x = new Map<String, setPasswordResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2317,17 +2317,17 @@ public class Api {
               'setPassword',
               'urn:tooling.soap.sforce.com',
               'setPasswordResponse',
-              'Api.setPasswordResponse_element'}
+              'setPasswordResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.LoginResult login(String username,String password) {
-            Api.login_element request_x = new Api.login_element();
-            Api.loginResponse_element response_x;
+        public LoginResult login(String username,String password) {
+            login_element request_x = new login_element();
+            loginResponse_element response_x;
             request_x.username = username;
             request_x.password = password;
-            Map<String, Api.loginResponse_element> response_map_x = new Map<String, Api.loginResponse_element>();
+            Map<String, loginResponse_element> response_map_x = new Map<String, loginResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2339,16 +2339,16 @@ public class Api {
               'login',
               'urn:tooling.soap.sforce.com',
               'loginResponse',
-              'Api.loginResponse_element'}
+              'loginResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.DeleteResult[] delete_x(String[] ids) {
-            Api.delete_element request_x = new Api.delete_element();
-            Api.deleteResponse_element response_x;
+        public DeleteResult[] delete_x(String[] ids) {
+            delete_element request_x = new delete_element();
+            deleteResponse_element response_x;
             request_x.ids = ids;
-            Map<String, Api.deleteResponse_element> response_map_x = new Map<String, Api.deleteResponse_element>();
+            Map<String, deleteResponse_element> response_map_x = new Map<String, deleteResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2360,16 +2360,16 @@ public class Api {
               'delete',
               'urn:tooling.soap.sforce.com',
               'deleteResponse',
-              'Api.deleteResponse_element'}
+              'deleteResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.QueryResult query(String queryString) {
-            Api.query_element request_x = new Api.query_element();
-            Api.queryResponse_element response_x;
+        public QueryResult query(String queryString) {
+            query_element request_x = new query_element();
+            queryResponse_element response_x;
             request_x.queryString = queryString;
-            Map<String, Api.queryResponse_element> response_map_x = new Map<String, Api.queryResponse_element>();
+            Map<String, queryResponse_element> response_map_x = new Map<String, queryResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2381,18 +2381,18 @@ public class Api {
               'query',
               'urn:tooling.soap.sforce.com',
               'queryResponse',
-              'Api.queryResponse_element'}
+              'queryResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.GetDeletedResult getDeleted(String sObjectType,DateTime start,DateTime end_x) {
-            Api.getDeleted_element request_x = new Api.getDeleted_element();
-            Api.getDeletedResponse_element response_x;
+        public GetDeletedResult getDeleted(String sObjectType,DateTime start,DateTime end_x) {
+            getDeleted_element request_x = new getDeleted_element();
+            getDeletedResponse_element response_x;
             request_x.sObjectType = sObjectType;
             request_x.start = start;
             request_x.end_x = end_x;
-            Map<String, Api.getDeletedResponse_element> response_map_x = new Map<String, Api.getDeletedResponse_element>();
+            Map<String, getDeletedResponse_element> response_map_x = new Map<String, getDeletedResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2404,16 +2404,16 @@ public class Api {
               'getDeleted',
               'urn:tooling.soap.sforce.com',
               'getDeletedResponse',
-              'Api.getDeletedResponse_element'}
+              'getDeletedResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.SaveResult[] update_x(Api.sObject_x[] sObjects) {
-            Api.update_element request_x = new Api.update_element();
-            Api.updateResponse_element response_x;
+        public SaveResult[] update_x(sObject_x[] sObjects) {
+            update_element request_x = new update_element();
+            updateResponse_element response_x;
             request_x.sObjects = sObjects;
-            Map<String, Api.updateResponse_element> response_map_x = new Map<String, Api.updateResponse_element>();
+            Map<String, updateResponse_element> response_map_x = new Map<String, updateResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2425,17 +2425,17 @@ public class Api {
               'update',
               'urn:tooling.soap.sforce.com',
               'updateResponse',
-              'Api.updateResponse_element'}
+              'updateResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.UpsertResult[] upsert_x(String fieldName,Api.sObject_x[] entities) {
-            Api.upsert_element request_x = new Api.upsert_element();
-            Api.upsertResponse_element response_x;
+        public UpsertResult[] upsert_x(String fieldName,sObject_x[] entities) {
+            upsert_element request_x = new upsert_element();
+            upsertResponse_element response_x;
             request_x.fieldName = fieldName;
             request_x.entities = entities;
-            Map<String, Api.upsertResponse_element> response_map_x = new Map<String, Api.upsertResponse_element>();
+            Map<String, upsertResponse_element> response_map_x = new Map<String, upsertResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2447,16 +2447,16 @@ public class Api {
               'upsert',
               'urn:tooling.soap.sforce.com',
               'upsertResponse',
-              'Api.upsertResponse_element'}
+              'upsertResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.ExecuteAnonymousResult executeAnonymous(String String_x) {
-            Api.executeAnonymous_element request_x = new Api.executeAnonymous_element();
-            Api.executeAnonymousResponse_element response_x;
+        public ExecuteAnonymousResult executeAnonymous(String String_x) {
+            executeAnonymous_element request_x = new executeAnonymous_element();
+            executeAnonymousResponse_element response_x;
             request_x.String_x = String_x;
-            Map<String, Api.executeAnonymousResponse_element> response_map_x = new Map<String, Api.executeAnonymousResponse_element>();
+            Map<String, executeAnonymousResponse_element> response_map_x = new Map<String, executeAnonymousResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2468,18 +2468,18 @@ public class Api {
               'executeAnonymous',
               'urn:tooling.soap.sforce.com',
               'executeAnonymousResponse',
-              'Api.executeAnonymousResponse_element'}
+              'executeAnonymousResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.GetUpdatedResult getUpdated(String sObjectType,DateTime start,DateTime end_x) {
-            Api.getUpdated_element request_x = new Api.getUpdated_element();
-            Api.getUpdatedResponse_element response_x;
+        public GetUpdatedResult getUpdated(String sObjectType,DateTime start,DateTime end_x) {
+            getUpdated_element request_x = new getUpdated_element();
+            getUpdatedResponse_element response_x;
             request_x.sObjectType = sObjectType;
             request_x.start = start;
             request_x.end_x = end_x;
-            Map<String, Api.getUpdatedResponse_element> response_map_x = new Map<String, Api.getUpdatedResponse_element>();
+            Map<String, getUpdatedResponse_element> response_map_x = new Map<String, getUpdatedResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2491,16 +2491,16 @@ public class Api {
               'getUpdated',
               'urn:tooling.soap.sforce.com',
               'getUpdatedResponse',
-              'Api.getUpdatedResponse_element'}
+              'getUpdatedResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.InvalidateSessionsResult[] invalidateSessions(String[] ArrayList) {
-            Api.invalidateSessions_element request_x = new Api.invalidateSessions_element();
-            Api.invalidateSessionsResponse_element response_x;
+        public InvalidateSessionsResult[] invalidateSessions(String[] ArrayList) {
+            invalidateSessions_element request_x = new invalidateSessions_element();
+            invalidateSessionsResponse_element response_x;
             request_x.ArrayList = ArrayList;
-            Map<String, Api.invalidateSessionsResponse_element> response_map_x = new Map<String, Api.invalidateSessionsResponse_element>();
+            Map<String, invalidateSessionsResponse_element> response_map_x = new Map<String, invalidateSessionsResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2512,16 +2512,16 @@ public class Api {
               'invalidateSessions',
               'urn:tooling.soap.sforce.com',
               'invalidateSessionsResponse',
-              'Api.invalidateSessionsResponse_element'}
+              'invalidateSessionsResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.SaveResult[] create(Api.sObject_x[] sObjects) {
-            Api.create_element request_x = new Api.create_element();
-            Api.createResponse_element response_x;
+        public SaveResult[] create(sObject_x[] sObjects) {
+            create_element request_x = new create_element();
+            createResponse_element response_x;
             request_x.sObjects = sObjects;
-            Map<String, Api.createResponse_element> response_map_x = new Map<String, Api.createResponse_element>();
+            Map<String, createResponse_element> response_map_x = new Map<String, createResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2533,16 +2533,16 @@ public class Api {
               'create',
               'urn:tooling.soap.sforce.com',
               'createResponse',
-              'Api.createResponse_element'}
+              'createResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.DescribeSObjectResult[] describeSObjects(String[] types) {
-            Api.describeSObjects_element request_x = new Api.describeSObjects_element();
-            Api.describeSObjectsResponse_element response_x;
+        public DescribeSObjectResult[] describeSObjects(String[] types) {
+            describeSObjects_element request_x = new describeSObjects_element();
+            describeSObjectsResponse_element response_x;
             request_x.types = types;
-            Map<String, Api.describeSObjectsResponse_element> response_map_x = new Map<String, Api.describeSObjectsResponse_element>();
+            Map<String, describeSObjectsResponse_element> response_map_x = new Map<String, describeSObjectsResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2554,16 +2554,16 @@ public class Api {
               'describeSObjects',
               'urn:tooling.soap.sforce.com',
               'describeSObjectsResponse',
-              'Api.describeSObjectsResponse_element'}
+              'describeSObjectsResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.DescribeWorkitemActionResult[] describeWorkitemActions(String[] workitemIds) {
-            Api.describeWorkitemActions_element request_x = new Api.describeWorkitemActions_element();
-            Api.describeWorkitemActionsResponse_element response_x;
+        public DescribeWorkitemActionResult[] describeWorkitemActions(String[] workitemIds) {
+            describeWorkitemActions_element request_x = new describeWorkitemActions_element();
+            describeWorkitemActionsResponse_element response_x;
             request_x.workitemIds = workitemIds;
-            Map<String, Api.describeWorkitemActionsResponse_element> response_map_x = new Map<String, Api.describeWorkitemActionsResponse_element>();
+            Map<String, describeWorkitemActionsResponse_element> response_map_x = new Map<String, describeWorkitemActionsResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2575,15 +2575,15 @@ public class Api {
               'describeWorkitemActions',
               'urn:tooling.soap.sforce.com',
               'describeWorkitemActionsResponse',
-              'Api.describeWorkitemActionsResponse_element'}
+              'describeWorkitemActionsResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.GetServerTimestampResult getServerTimestamp() {
-            Api.getServerTimestamp_element request_x = new Api.getServerTimestamp_element();
-            Api.getServerTimestampResponse_element response_x;
-            Map<String, Api.getServerTimestampResponse_element> response_map_x = new Map<String, Api.getServerTimestampResponse_element>();
+        public GetServerTimestampResult getServerTimestamp() {
+            getServerTimestamp_element request_x = new getServerTimestamp_element();
+            getServerTimestampResponse_element response_x;
+            Map<String, getServerTimestampResponse_element> response_map_x = new Map<String, getServerTimestampResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2595,15 +2595,15 @@ public class Api {
               'getServerTimestamp',
               'urn:tooling.soap.sforce.com',
               'getServerTimestampResponse',
-              'Api.getServerTimestampResponse_element'}
+              'getServerTimestampResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.GetUserInfoResult getUserInfo() {
-            Api.getUserInfo_element request_x = new Api.getUserInfo_element();
-            Api.getUserInfoResponse_element response_x;
-            Map<String, Api.getUserInfoResponse_element> response_map_x = new Map<String, Api.getUserInfoResponse_element>();
+        public GetUserInfoResult getUserInfo() {
+            getUserInfo_element request_x = new getUserInfo_element();
+            getUserInfoResponse_element response_x;
+            Map<String, getUserInfoResponse_element> response_map_x = new Map<String, getUserInfoResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2615,16 +2615,16 @@ public class Api {
               'getUserInfo',
               'urn:tooling.soap.sforce.com',
               'getUserInfoResponse',
-              'Api.getUserInfoResponse_element'}
+              'getUserInfoResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
         }
-        public Api.QueryResult queryAll(String queryString) {
-            Api.queryAll_element request_x = new Api.queryAll_element();
-            Api.queryAllResponse_element response_x;
+        public QueryResult queryAll(String queryString) {
+            queryAll_element request_x = new queryAll_element();
+            queryAllResponse_element response_x;
             request_x.queryString = queryString;
-            Map<String, Api.queryAllResponse_element> response_map_x = new Map<String, Api.queryAllResponse_element>();
+            Map<String, queryAllResponse_element> response_map_x = new Map<String, queryAllResponse_element>();
             response_map_x.put('response_x', response_x);
             WebServiceCallout.invoke(
               this,
@@ -2636,7 +2636,7 @@ public class Api {
               'queryAll',
               'urn:tooling.soap.sforce.com',
               'queryAllResponse',
-              'Api.queryAllResponse_element'}
+              'queryAllResponse_element'}
             );
             response_x = response_map_x.get('response_x');
             return response_x.result;
@@ -2713,7 +2713,7 @@ public class Api {
         private String[] field_order_type_info = new String[]{'Alias','Email','FirstName','IsActive','LastName','LastReferencedDate','LastViewedDate','Name','Phone','ProfileId','RecordTypeId','Title','Type_x','UserRoleId','Username'};
     }
     public class DebuggingHeader_element {
-        public Api.LogInfo[] categories;
+        public LogInfo[] categories;
         public String debugLevel;
         private String[] categories_type_info = new String[]{'categories','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] debugLevel_type_info = new String[]{'debugLevel','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -2725,11 +2725,11 @@ public class Api {
         private String[] field_order_type_info = new String[]{};
     }
     public class ExternalReference {
-        public Api.ExternalMethod[] methods;
+        public ExternalMethod[] methods;
         public String name;
         public String namespace;
-        public Api.Position[] references;
-        public Api.ExternalSymbol[] variables;
+        public Position[] references;
+        public ExternalSymbol[] variables;
         private String[] methods_type_info = new String[]{'methods','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] name_type_info = new String[]{'name','urn:tooling.soap.sforce.com',null,'1','1','false'};
         private String[] namespace_type_info = new String[]{'namespace','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -2739,17 +2739,17 @@ public class Api {
         private String[] field_order_type_info = new String[]{'methods','name','namespace','references','variables'};
     }
     public class SymbolTable {
-        public Api.Constructor[] constructors;
-        public Api.ExternalReference[] externalReferences;
+        public Constructor[] constructors;
+        public ExternalReference[] externalReferences;
         public String id;
-        public Api.SymbolTable[] innerClasses;
+        public SymbolTable[] innerClasses;
         public String[] interfaces;
-        public Api.Method[] methods;
+        public Method[] methods;
         public String name;
         public String namespace;
-        public Api.VisibilitySymbol[] properties;
-        public Api.Symbol tableDeclaration;
-        public Api.Symbol[] variables;
+        public VisibilitySymbol[] properties;
+        public Symbol tableDeclaration;
+        public Symbol[] variables;
         private String[] constructors_type_info = new String[]{'constructors','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] externalReferences_type_info = new String[]{'externalReferences','urn:tooling.soap.sforce.com',null,'0','-1','false'};
         private String[] id_type_info = new String[]{'id','urn:tooling.soap.sforce.com',null,'1','1','false'};
@@ -2767,20 +2767,20 @@ public class Api {
     public class ApexTriggerMember {
         public String Body;
         public String Content;
-        public Api.ApexTrigger ContentEntity;
+        public ApexTrigger ContentEntity;
         public String ContentEntityId;
-        public Api.User_x CreatedBy;
+        public User_x CreatedBy;
         public String CreatedById;
         public DateTime CreatedDate;
         public Boolean IsDeleted;
-        public Api.User_x LastModifiedBy;
+        public User_x LastModifiedBy;
         public String LastModifiedById;
         public DateTime LastModifiedDate;
         public DateTime LastSyncDate;
-        public Api.ApexTriggerMetadata Metadata;
-        public Api.MetadataContainer MetadataContainer;
+        public ApexTriggerMetadata Metadata;
+        public MetadataContainer MetadataContainer;
         public String MetadataContainerId;
-        public Api.SymbolTable SymbolTable;
+        public SymbolTable SymbolTable;
         public DateTime SystemModstamp;
         private String[] Body_type_info = new String[]{'Body','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] Content_type_info = new String[]{'Content','urn:tooling.soap.sforce.com',null,'0','1','true'};
