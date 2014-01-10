@@ -2174,7 +2174,7 @@ global class Api {
         private String[] field_order_type_info = new String[]{'layoutItems','numItems'};
     }
     global class SforceService {
-        global String endpoint_x = 'https://eu2.salesforce.com/services/Soap/T/29.0';
+        global String endpoint_x = System.Url.getSalesforceBaseUrl().toExternalForm() + '/services/Soap/T/29.0';
         global Map<String,String> inputHttpHeaders_x;
         global Map<String,String> outputHttpHeaders_x;
         global String clientCertName_x;
