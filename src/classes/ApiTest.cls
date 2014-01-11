@@ -13,7 +13,7 @@
     
     static testMethod void coverRetrieve() {
         Test.setMock(WebServiceMock.class, new RetrieveMock());
-        Object result = new Tooling.Api.Client().retrieve_x('Id', 'CustomField', new List<String>{'00Nb0000007p4tG'});
+        Object result = new Api.Client().retrieve_x('Id', 'CustomField', new List<String>{'00Nb0000007p4tG'});
         System.assert(result instanceof List<Api.sObject_x>);
     }
     
@@ -31,7 +31,7 @@
     
     static testMethod void coverDescribeGlobal() {
         Test.setMock(WebServiceMock.class, new DescribeGlobalMock());
-        Object result = new Tooling.Api.Client().describeGlobal();
+        Object result = new Api.Client().describeGlobal();
         System.assert(result instanceof Api.DescribeGlobalResult);
     }
     
@@ -49,7 +49,7 @@
     
     static testMethod void coverQueryMore() {
         Test.setMock(WebServiceMock.class, new QueryMoreMock());
-        Object result = new Tooling.Api.Client().queryMore('01gb0000008mQS9AAM-2000');
+        Object result = new Api.Client().queryMore('01gb0000008mQS9AAM-2000');
         System.assert(result instanceof Api.QueryResult);
     }
     
