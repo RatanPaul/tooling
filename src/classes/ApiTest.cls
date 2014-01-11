@@ -68,7 +68,7 @@
         }
     }
     
-    static testMethod void coverDescribeSObjectMock() {
+    static testMethod void coverDescribeSObject() {
         Test.setMock(WebServiceMock.class, new DescribeSObjectMock());
         Object result = new Api.Client().describeSObject('CustomField');
         System.assert(result instanceof Api.DescribeSObjectResult);
