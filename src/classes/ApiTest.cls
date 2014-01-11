@@ -128,4 +128,22 @@
         System.assert(result instanceof Api.LoginResult);
     }
     
+    //22:31:40.331 (331258000)|CALLOUT_REQUEST|[2363]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQLrOdG9aPfTI5gURaiNna1XRe0M8zLHYLbz5WcU7VqYYMtw0l4i81GDdtKyPmkNu90dlPWwZIIDhTA2e9cViG5ZyFtqu</sessionId></SessionHeader></env:Header><env:Body><delete xmlns="urn:tooling.soap.sforce.com"><ids>00Nb0000007p4tE</ids></delete></env:Body></env:Envelope>
+    //22:31:40.331 (331321000)|CALLOUT_REQUEST|[2363]|delete_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(ids), ids=(00Nb0000007p4tE), ids_type_info=(ids, urn:tooling.soap.sforce.com, null, 0, -1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //22:31:40.397 (397185000)|CALLOUT_RESPONSE|[2363]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><deleteResponse><result><errors><message>insufficient access rights on object id</message><statusCode>INSUFFICIENT_ACCESS_OR_READONLY</statusCode></errors><id xsi:nil="true"/><success>false</success></result></deleteResponse></soapenv:Body></soapenv:Envelope>
+    public class DeleteMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.deleteResponse_element responseElement = new Api.deleteResponse_element();
+            responseElement.result = new List<Api.DeleteResult>{new Api.DeleteResult()};
+            responseElement.result[0].errors = new List<Api.Error>{new Api.Error()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverDelete() {
+        Test.setMock(WebServiceMock.class, new DeleteMock());
+        Object result = new Api.Client().delete_x(new List<String>{'00Nb0000007p4tE'});
+        System.assert(result instanceof List<Api.DeleteResult>);
+    }
+    
 }
