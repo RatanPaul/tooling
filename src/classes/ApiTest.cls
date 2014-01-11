@@ -73,4 +73,24 @@
         Object result = new Api.Client().describeSObject('CustomField');
         System.assert(result instanceof Api.DescribeSObjectResult);
     }
+    
+    //02:02:22.389 (389103000)|CALLOUT_REQUEST|[2299]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQChuDKw2PyUD_.Zgp9ABaRAvYfIlp0pjv1t0ZCkNmMp5s5.Z6ScDj6u0eYUmBRmjwE.yjUqAv09CgoXbdTVFgdZWSz78</sessionId></SessionHeader></env:Header><env:Body><logout xmlns="urn:tooling.soap.sforce.com" /></env:Body></env:Envelope>
+    //02:02:22.389 (389171000)|CALLOUT_REQUEST|[2299]|logout_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=()]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //02:02:22.464 (464487000)|CALLOUT_RESPONSE|[2299]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><logoutResponse/></soapenv:Body></soapenv:Envelope>
+    public class LogoutMock implements WebServiceMock {
+        Boolean invoked = false;
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.logoutResponse_element responseElement = new Api.logoutResponse_element();
+            this.invoked = true;
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverLogout() {
+        LogoutMock mock = new LogoutMock();
+        Test.setMock(WebServiceMock.class, mock);
+        new Api.Client().logout();
+        System.assert(mock.invoked);
+    }
+    
 }
