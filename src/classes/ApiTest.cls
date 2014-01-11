@@ -35,4 +35,22 @@
         System.assert(result instanceof Api.DescribeGlobalResult);
     }
     
+    //01:30:06.384 (384082000)|CALLOUT_REQUEST|[2259]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQChuDKw2PyUD_.Zgp9ABaRAvYfIlp0pjv1t0ZCkNmMp5s5.Z6ScDj6u0eYUmBRmjwE.yjUqAv09CgoXbdTVFgdZWSz78</sessionId></SessionHeader></env:Header><env:Body><queryMore xmlns="urn:tooling.soap.sforce.com"><queryLocator>01gb0000008mQS9AAM-2000</queryLocator></queryMore></env:Body></env:Envelope>
+    //01:30:06.384 (384179000)|CALLOUT_REQUEST|[2259]|queryMore_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(queryLocator), queryLocator=01gb0000008mQS9AAM-2000, queryLocator_type_info=(queryLocator, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //01:30:06.459 (459860000)|CALLOUT_RESPONSE|[2259]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sf="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><soapenv:Fault><faultcode>sf:INVALID_TYPE</faultcode><faultstring>INVALID_TYPE: sObject type &apos;Contact&apos; is not supported.</faultstring><detail><sf:UnexpectedErrorFault xsi:type="sf:UnexpectedErrorFault"><sf:exceptionCode>INVALID_TYPE</sf:exceptionCode><sf:exceptionMessage>sObject type &apos;Contact&apos; is not supported.</sf:exceptionMessage></sf:UnexpectedErrorFault></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+    public class QueryMoreMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.queryMoreResponse_element responseElement = new Api.queryMoreResponse_element();
+            responseElement.result = new Api.QueryResult();
+            responseElement.result.records = new List<Api.sObject_x>{new Api.sObject_x()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverQueryMore() {
+        Test.setMock(WebServiceMock.class, new QueryMoreMock());
+        Object result = new Tooling.Api.Client().queryMore('01gb0000008mQS9AAM-2000');
+        System.assert(result instanceof Api.QueryResult);
+    }
+    
 }
