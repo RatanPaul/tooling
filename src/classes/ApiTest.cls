@@ -164,4 +164,22 @@
         System.assert(result instanceof Api.QueryResult);
     }
     
+    //22:44:49.251 (251488000)|CALLOUT_REQUEST|[2407]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQLrOdG9aPfTI5gURaiNna1XRe0M8zLHYLbz5WcU7VqYYMtw0l4i81GDdtKyPmkNu90dlPWwZIIDhTA2e9cViG5ZyFtqu</sessionId></SessionHeader></env:Header><env:Body><getDeleted xmlns="urn:tooling.soap.sforce.com"><sObjectType>ApexClass</sObjectType><start>2014-01-11T22:44:49.561Z</start><end>2014-01-11T22:44:49.561Z</end></getDeleted></env:Body></env:Envelope>
+    //22:44:49.251 (251565000)|CALLOUT_REQUEST|[2407]|getDeleted_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), end_x=2014-01-11 22:44:49, end_x_type_info=(end, urn:tooling.soap.sforce.com, null, 1, 1, false), field_order_type_info=(sObjectType, start, end_x), sObjectType=ApexClass, sObjectType_type_info=(sObjectType, urn:tooling.soap.sforce.com, null, 1, 1, false), start=2014-01-11 22:44:49, start_type_info=(start, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //22:44:49.333 (333220000)|CALLOUT_RESPONSE|[2407]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><getDeletedResponse><result><earliestDateAvailable>2014-01-10T21:08:00.000Z</earliestDateAvailable><latestDateCovered>2014-01-11T22:44:00.000Z</latestDateCovered></result></getDeletedResponse></soapenv:Body></soapenv:Envelope>
+    public class GetDeletedMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.getDeletedResponse_element responseElement = new Api.getDeletedResponse_element();
+            responseElement.result = new Api.GetDeletedResult();
+            responseElement.result.deletedRecords = new List<Api.DeletedRecord>{new Api.DeletedRecord()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverGetDeleted() {
+        Test.setMock(WebServiceMock.class, new GetDeletedMock());
+        Object result = new Api.Client().getDeleted('ApexClass', System.now(), System.now());
+        System.assert(result instanceof Api.GetDeletedResult);
+    }
+    
 }
