@@ -110,4 +110,22 @@
         System.assert(result instanceof Api.SetPasswordResult);
     }
     
+    //https://success.salesforce.com/issues_view?id=a1p30000000T2GcAAK
+    //17:27:55.267 (267126000)|CALLOUT_REQUEST|[2343]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header /><env:Body><login xmlns="urn:tooling.soap.sforce.com"><username>matt@69demo.com</username><password>cs42lkj1</password></login></env:Body></env:Envelope>
+    //17:27:55.267 (267196000)|CALLOUT_REQUEST|[2343]|login_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(username, password), password=cs42lkj1, password_type_info=(password, urn:tooling.soap.sforce.com, null, 1, 1, false), username=matt@69demo.com, username_type_info=(username, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //17:27:55.349 (349664000)|CALLOUT_RESPONSE|[2343]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sf="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><soapenv:Fault><faultcode>sf:UNKNOWN_EXCEPTION</faultcode><faultstring>UNKNOWN_EXCEPTION: An unexpected error occurred. Please include this ErrorId if you contact support: 354283919-31847 (1318667741)</faultstring><detail><sf:UnexpectedErrorFault xsi:type="sf:UnexpectedErrorFault"><sf:exceptionCode>UNKNOWN_EXCEPTION</sf:exceptionCode><sf:exceptionMessage>An unexpected error occurred. Please include this ErrorId if you contact support: 354283919-31847 (1318667741)</sf:exceptionMessage></sf:UnexpectedErrorFault></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+    public class LoginMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.loginResponse_element responseElement = new Api.loginResponse_element();
+            responseElement.result = new Api.LoginResult();
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverLogin() {
+        Test.setMock(WebServiceMock.class, new LoginMock());
+        Object result = new Api.Client().login('matt@99demo.com', 'cs42lkj1');
+        System.assert(result instanceof Api.LoginResult);
+    }
+    
 }
