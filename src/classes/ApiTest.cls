@@ -93,4 +93,21 @@
         System.assert(mock.invoked);
     }
     
+    //17:15:26.456 (456345000)|CALLOUT_REQUEST|[2320]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQPKzXFngCq06.Kp1mncmDamy_OKsUxzV6b4aq6FDpDdwNkyxHaX.UPFI9Oixiy5wgZ50G3Dkhv8o_.d8xvCn5iynA7w7</sessionId></SessionHeader></env:Header><env:Body><setPassword xmlns="urn:tooling.soap.sforce.com"><userId>005b0000000vzw0</userId><password>pw42lkj1</password></setPassword></env:Body></env:Envelope>
+    //17:15:26.456 (456411000)|CALLOUT_REQUEST|[2320]|setPassword_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(userId, password), password=pw42lkj1, password_type_info=(password, urn:tooling.soap.sforce.com, null, 1, 1, false), userId=005b0000000vzw0, userId_type_info=(userId, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //17:15:26.587 (587430000)|CALLOUT_RESPONSE|[2320]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><setPasswordResponse><result/></setPasswordResponse></soapenv:Body></soapenv:Envelope>
+    public class SetPasswordMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.setPasswordResponse_element responseElement = new Api.setPasswordResponse_element();
+            responseElement.result = new Api.SetPasswordResult();
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverSetPassword() {
+        Test.setMock(WebServiceMock.class, new SetPasswordMock());
+        Object result = new Api.Client().setPassword('005b0000000vzw0', 'pw42lkj1');
+        System.assert(result instanceof Api.SetPasswordResult);
+    }
+    
 }
