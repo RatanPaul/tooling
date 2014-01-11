@@ -2176,8 +2176,7 @@ global class Api {
     global class Client {
         
         global Client() {
-            this.SessionHeader = new Api.SessionHeader_element();
-            this.SessionHeader.sessionId = UserInfo.getSessionId();
+            this(UserInfo.getSessionId());
         }
         
         global Client(String sessionId) {
