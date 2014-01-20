@@ -239,4 +239,21 @@
         Object result = new Api.Client().executeAnonymous('System.debug(true);');
         System.assert(result instanceof Api.ExecuteAnonymousResult);
     }
+    
+    //17:31:41.203 (203086000)|CALLOUT_REQUEST|[2494]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQOsEgWb60aKf1rtPw8w7VwwpvgHMsmyzDqlHtde1nz3NIpAgaXdTQcq0Y_I7nkUoM206qHd79kCphCbajpd3cYwdfQx4</sessionId></SessionHeader></env:Header><env:Body><getUpdated xmlns="urn:tooling.soap.sforce.com"><sObjectType>StaticResource</sObjectType><start>2014-01-20T17:31:41.648Z</start><end>2014-01-20T17:31:41.648Z</end></getUpdated></env:Body></env:Envelope>
+    //17:31:41.203 (203161000)|CALLOUT_REQUEST|[2494]|getUpdated_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), end_x=2014-01-20 17:31:41, end_x_type_info=(end, urn:tooling.soap.sforce.com, null, 1, 1, false), field_order_type_info=(sObjectType, start, end_x), sObjectType=StaticResource, sObjectType_type_info=(sObjectType, urn:tooling.soap.sforce.com, null, 1, 1, false), start=2014-01-20 17:31:41, start_type_info=(start, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //17:31:41.289 (289849000)|CALLOUT_RESPONSE|[2494]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><getUpdatedResponse><result><latestDateCovered>2014-01-20T17:31:00.000Z</latestDateCovered></result></getUpdatedResponse></soapenv:Body></soapenv:Envelope>
+    public class GetUpdatedMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.getUpdatedResponse_element responseElement = new Api.getUpdatedResponse_element();
+            responseElement.result = new Api.GetUpdatedResult();
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverGetUpdated() {
+        Test.setMock(WebServiceMock.class, new GetUpdatedMock());
+        Object result = new Api.Client().getUpdated('StaticResource', System.now(), System.now());
+        System.assert(result instanceof Api.GetUpdatedResult);
+    }
 }
