@@ -434,4 +434,21 @@
         System.assert(result instanceof List<Api.SaveResult>);
     }
     
+    //22:58:53.268 (268068000)|CALLOUT_REQUEST|[2422]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><query xmlns="urn:tooling.soap.sforce.com"><queryString>SELECT Id FROM ApexClassMember</queryString></query></env:Body></env:Envelope>
+    //22:58:53.268 (268140000)|CALLOUT_REQUEST|[2422]|query_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(queryString), queryString=SELECT Id FROM ApexClassMember, queryString_type_info=(queryString, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //22:58:53.331 (331053000)|CALLOUT_RESPONSE|[2422]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><queryResponse><result><done>true</done><entityTypeName>ApexClassMember</entityTypeName><queryLocator xsi:nil="true"/><records xsi:type="ApexClassMember"><Id>400b00000000FQpAAM</Id></records><records xsi:type="ApexClassMember"><Id>400b00000000FQuAAM</Id></records><records xsi:type="ApexClassMember"><Id>400b00000000FR4AAM</Id></records><size>3</size><totalSize>3</totalSize></result></queryResponse></soapenv:Body></soapenv:Envelope>
+    public class ApexClassMemberMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.queryResponse_element responseElement = new Api.queryResponse_element();
+            responseElement.result = new Api.QueryResult();
+            responseElement.result.records = new List<Api.ApexClassMember>{new Api.ApexClassMember()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void testApexClassMember() {
+        Test.setMock(WebServiceMock.class, new ApexClassMemberMock());
+        Object result = new Api.Client().query('SELECT Id FROM ApexClassMember');
+        System.assert(result instanceof Api.QueryResult);
+    }
 }
