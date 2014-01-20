@@ -1889,7 +1889,17 @@ global class Api {
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'entry'};
     }
-    global class ApexClass {
+    global class ApexClass extends sObject_x {
+        //complex type
+        global String type_x = 'ApexClass';
+        private String[] type_x_att_info = new String[] {'xsi:type'};
+        
+        //hand-inherited from sObject_x
+        global String[] fieldsToNull;
+        global String Id;
+        private String[] fieldsToNull_type_info = new String[]{'fieldsToNull','urn:tooling.soap.sforce.com',null,'0','-1','true'};
+        private String[] Id_type_info = new String[]{'Id','urn:tooling.soap.sforce.com',null,'1','1','true'};
+        
         global Double ApiVersion;
         global String Body;
         global Double BodyCrc;
@@ -1927,7 +1937,9 @@ global class Api {
         private String[] SymbolTable_type_info = new String[]{'SymbolTable','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] SystemModstamp_type_info = new String[]{'SystemModstamp','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
-        private String[] field_order_type_info = new String[]{'ApiVersion','Body','BodyCrc','CreatedBy','CreatedById','CreatedDate','FullName','IsValid','LastModifiedBy','LastModifiedById','LastModifiedDate','LengthWithoutComments','Metadata','Name','NamespacePrefix','Status','SymbolTable','SystemModstamp'};
+        
+        //hand-prepended from sObject_x
+        private String[] field_order_type_info = new String[]{'fieldsToNull','Id','ApiVersion','Body','BodyCrc','CreatedBy','CreatedById','CreatedDate','FullName','IsValid','LastModifiedBy','LastModifiedById','LastModifiedDate','LengthWithoutComments','Metadata','Name','NamespacePrefix','Status','SymbolTable','SystemModstamp'};
     }
     global class MetadataWithContent {
         global String content;

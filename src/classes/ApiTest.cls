@@ -409,4 +409,29 @@
         Object result = new Api.Client().update_x(new List<Api.sObject_x>{customField});
         System.assert(result instanceof List<Api.SaveResult>);
     }
+    
+    //22:03:57.371 (371011000)|CALLOUT_REQUEST|[2562]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><create xmlns="urn:tooling.soap.sforce.com"><sObjects xsi:type="ApexClass"><Id xsi:nil="true" /><ApiVersion xsi:nil="true" /><Body>public class MyClass {}</Body><BodyCrc xsi:nil="true" /><CreatedBy xsi:nil="true" /><CreatedById xsi:nil="true" /><CreatedDate xsi:nil="true" /><FullName xsi:nil="true" /><IsValid xsi:nil="true" /><LastModifiedBy xsi:nil="true" /><LastModifiedById xsi:nil="true" /><LastModifiedDate xsi:nil="true" /><LengthWithoutComments xsi:nil="true" /><Metadata xsi:nil="true" /><Name xsi:nil="true" /><NamespacePrefix xsi:nil="true" /><Status xsi:nil="true" /><SymbolTable xsi:nil="true" /><SystemModstamp xsi:nil="true" /></sObjects></create></env:Body></env:Envelope>
+    //22:03:57.371 (371210000)|CALLOUT_REQUEST|[2562]|create_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(sObjects), sObjects=(ApexClass:[ApiVersion=null, ApiVersion_type_info=(ApiVersion, urn:tooling.soap.sforce.com, null, 0, 1, true), Body=public class MyClass {}, BodyCrc=null, BodyCrc_type_info=(BodyCrc, urn:tooling.soap.sforce.com, null, 0, 1, true), Body_type_info=(Body, urn:tooling.soap.sforce.com, null, 0, 1, true), CreatedBy=null, CreatedById=null, CreatedById_type_info=(CreatedById, urn:tooling.soap.sforce.com, null, 0, 1, true), CreatedBy_type_info=(CreatedBy, urn:tooling.soap.sforce.com, null, 0, 1, true), CreatedDate=null, CreatedDate_type_info=(CreatedDate, urn:tooling.soap.sforce.com, null, 0, 1, true), FullName=null, FullName_type_info=(FullName, urn:tooling.soap.sforce.com, null, 0, 1, true), Id=null, Id_type_info=(Id, urn:tooling.soap.sforce.com, null, 1, 1, true), IsValid=null, IsValid_type_info=(IsValid, urn:tooling.soap.sforce.com, null, 0, 1, true), LastModifiedBy=null, LastModifiedById=null, LastModifiedById_type_info=(LastModifiedById, urn:tooling.soap.sforce.com, null, 0, 1, true), LastModifiedBy_type_info=(LastModifiedBy, urn:tooling.soap.sforce.com, null, 0, 1, true), LastModifiedDate=null, LastModifiedDate_type_info=(LastModifiedDate, urn:tooling.soap.sforce.com, null, 0, 1, true), LengthWithoutComments=null, LengthWithoutComments_type_info=(LengthWithoutComments, urn:tooling.soap.sforce.com, null, 0, 1, true), Metadata=null, Metadata_type_info=(Metadata, urn:tooling.soap.sforce.com, null, 0, 1, true), Name=null, Name_type_info=(Name, urn:tooling.soap.sforce.com, null, 0, 1, true), NamespacePrefix=null, NamespacePrefix_type_info=(NamespacePrefix, urn:tooling.soap.sforce.com, null, 0, 1, true), Status=null, Status_type_info=(Status, urn:tooling.soap.sforce.com, null, 0, 1, true), SymbolTable=null, SymbolTable_type_info=(SymbolTable, urn:tooling.soap.sforce.com, null, 0, 1, true), SystemModstamp=null, SystemModstamp_type_info=(SystemModstamp, urn:tooling.soap.sforce.com, null, 0, 1, true), apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(fieldsToNull, Id, ApiVersion, Body, BodyCrc, CreatedBy, CreatedById, CreatedDate, FullName, IsValid, ...), fieldsToNull=null, fieldsToNull_type_info=(fieldsToNull, urn:tooling.soap.sforce.com, null, 0, -1, true), sObject_x.Id=null, sObject_x.Id_type_info=(Id, urn:tooling.soap.sforce.com, null, 1, 1, true), sObject_x.apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), sObject_x.field_order_type_info=(fieldsToNull, Id), sObject_x.fieldsToNull=null, sObject_x.fieldsToNull_type_info=(fieldsToNull, urn:tooling.soap.sforce.com, null, 0, -1, true), type_x=ApexClass, type_x_att_info=(xsi:type)]), sObjects_type_info=(sObjects, urn:tooling.soap.sforce.com, null, 0, -1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //22:03:57.618 (618314000)|CALLOUT_RESPONSE|[2562]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><createResponse><result><id>01pb00000036IobAAE</id><success>true</success></result></createResponse></soapenv:Body></soapenv:Envelope>
+    public class ApexClassMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.createResponse_element responseElement = new Api.createResponse_element();
+            responseElement.result = new List<Api.SaveResult>{new Api.SaveResult()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void testApexClass() {
+        Test.setMock(WebServiceMock.class, new ApexClassMock());
+        Api.ApexClass apex = new Api.ApexClass();
+        apex.Body = 'public class MyClass {}';
+        apex.CreatedBy = new Api.User_x();
+        apex.LastModifiedBy = new Api.User_x();
+        apex.Metadata = new Api.ApexClassMetadata();
+        apex.Metadata.packageVersions = new List<Api.PackageVersionMetadata>{new Api.PackageVersionMetadata()};
+        apex.SymbolTable = new Api.SymbolTable();
+        Object result = new Api.Client().create(new List<Api.ApexClass>{apex});
+        System.assert(result instanceof List<Api.SaveResult>);
+    }
+    
 }
