@@ -367,4 +367,22 @@
         Object result = new Api.Client().getUserInfo();
         System.assert(result instanceof Api.GetUserInfoResult);
     }
+    
+    //18:16:51.520 (520993000)|CALLOUT_REQUEST|[2639]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><queryAll xmlns="urn:tooling.soap.sforce.com"><queryString>SELECT Id FROM CustomField</queryString></queryAll></env:Body></env:Envelope>
+    //18:16:51.521 (521065000)|CALLOUT_REQUEST|[2639]|queryAll_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(queryString), queryString=SELECT Id FROM CustomField, queryString_type_info=(queryString, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //18:16:51.646 (646312000)|CALLOUT_RESPONSE|[2639]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><queryAllResponse><result><done>true</done><entityTypeName>CustomFieldDefinition</entityTypeName><queryLocator xsi:nil="true"/><records xsi:type="CustomField"><Id>00Nb0000007p4tEEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tFEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tGEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tHEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tIEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tJEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tKEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tLEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tMEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tNEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tOEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tPEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tQEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tREAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tSEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tTEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tUEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tVEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tWEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tXEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tYEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4tZEAQ</Id></records><records xsi:type="CustomField"><Id>00Nb0000007p4taEAA</Id></records><size>23</size><totalSize>23</totalSize></result></queryAllResponse></soapenv:Body></soapenv:Envelope>
+    public class QueryAllMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.queryAllResponse_element responseElement = new Api.queryAllResponse_element();
+            responseElement.result = new Api.QueryResult();
+            responseElement.result.records = new List<Api.sObject_x>{new Api.sObject_x()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverQueryAll() {
+        Test.setMock(WebServiceMock.class, new QueryAllMock());
+        Object result = new Api.Client().queryAll('SELECT Id FROM CustomField');
+        System.assert(result instanceof Api.QueryResult);
+    }
 }
