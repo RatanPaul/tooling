@@ -256,4 +256,22 @@
         Object result = new Api.Client().getUpdated('StaticResource', System.now(), System.now());
         System.assert(result instanceof Api.GetUpdatedResult);
     }
+    
+    //17:39:10.534 (534216000)|CALLOUT_REQUEST|[2515]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQOsEgWb60aKf1rtPw8w7VwwpvgHMsmyzDqlHtde1nz3NIpAgaXdTQcq0Y_I7nkUoM206qHd79kCphCbajpd3cYwdfQx4</sessionId></SessionHeader></env:Header><env:Body><invalidateSessions xmlns="urn:tooling.soap.sforce.com"><ArrayList>00Db0000000d6mj!AQwAQITRJjn7LVOb51nusnNi3LDgmbuG5lCAmaH1w7Yxu.rsdHijLTe83onPVZbf43BMv_iAg1wseNlhT2F7hVVhFuAIY9Qk</ArrayList></invalidateSessions></env:Body></env:Envelope>
+    //17:39:10.534 (534291000)|CALLOUT_REQUEST|[2515]|invalidateSessions_element:[ArrayList=(00Db0000000d6mj!AQwAQITRJjn7LVOb51nusnNi3LDgmbuG5lCAmaH1w7Yxu.rsdHijLTe83onPVZbf43BMv_iAg1wseNlhT2F7hVVhFuAIY9Qk), ArrayList_type_info=(ArrayList, urn:tooling.soap.sforce.com, null, 0, -1, false), apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(ArrayList)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //17:39:10.603 (603448000)|CALLOUT_RESPONSE|[2515]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><invalidateSessionsResponse><result><success>true</success></result></invalidateSessionsResponse></soapenv:Body></soapenv:Envelope>
+    public class InvalidateSessionsMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.invalidateSessionsResponse_element responseElement = new Api.invalidateSessionsResponse_element	();
+            responseElement.result = new List<Api.InvalidateSessionsResult>{new Api.InvalidateSessionsResult()};
+            responseElement.result[0].errors = new List<Api.Error>{new Api.Error()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverInvalidateSessions() {
+        Test.setMock(WebServiceMock.class, new InvalidateSessionsMock());
+        Object result = new Api.Client().invalidateSessions(new List<String>{UserInfo.getSessionId()});
+        System.assert(result instanceof List<Api.InvalidateSessionsResult>);
+    }
 }
