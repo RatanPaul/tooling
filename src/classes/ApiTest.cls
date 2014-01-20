@@ -350,4 +350,21 @@
         Object result = new Api.Client().getServerTimestamp();
         System.assert(result instanceof Api.GetServerTimestampResult);
     }
+    
+    //18:12:38.495 (495753000)|CALLOUT_REQUEST|[2618]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><getUserInfo xmlns="urn:tooling.soap.sforce.com" /></env:Body></env:Envelope>
+    //18:12:38.495 (495809000)|CALLOUT_REQUEST|[2618]|getUserInfo_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=()]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //18:12:38.666 (666936000)|CALLOUT_RESPONSE|[2618]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><getUserInfoResponse><result><accessibilityMode>false</accessibilityMode><currencySymbol>€</currencySymbol><orgAttachmentFileSizeLimit>5242880</orgAttachmentFileSizeLimit><orgDefaultCurrencyIsoCode>EUR</orgDefaultCurrencyIsoCode><orgDisallowHtmlAttachments>false</orgDisallowHtmlAttachments><orgHasPersonAccounts>false</orgHasPersonAccounts><organizationId>00Db0000000d6mjEAA</organizationId><organizationMultiCurrency>false</organizationMultiCurrency><organizationName>BIGASSFORCE.COM LTD</organizationName><profileId>00eb0000000xaqCAAQ</profileId><roleId xsi:nil="true"/><sessionSecondsValid>7200</sessionSecondsValid><userDefaultCurrencyIsoCode xsi:nil="true"/><userEmail>matt@countryskippers.com</userEmail><userFullName>Matt Bingham</userFullName><userId>005b0000000vzw0AAA</userId><userLanguage>en_US</userLanguage><userLocale>en_GB</userLocale><userName>matt@99demo.com</userName><userTimeZone>Europe/London</userTimeZone><userType>Standard</userType><userUiSkin>Theme3</userUiSkin></result></getUserInfoResponse></soapenv:Body></soapenv:Envelope>
+    public class GetUserInfoMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.getUserInfoResponse_element responseElement = new Api.getUserInfoResponse_element();
+            responseElement.result = new Api.GetUserInfoResult();
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverGetUserInfo() {
+        Test.setMock(WebServiceMock.class, new GetUserInfoMock());
+        Object result = new Api.Client().getUserInfo();
+        System.assert(result instanceof Api.GetUserInfoResult);
+    }
 }
