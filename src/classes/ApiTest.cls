@@ -451,4 +451,22 @@
         Object result = new Api.Client().query('SELECT Id FROM ApexClassMember');
         System.assert(result instanceof Api.QueryResult);
     }
+    
+    //23:04:54.329 (329212000)|CALLOUT_REQUEST|[2422]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><query xmlns="urn:tooling.soap.sforce.com"><queryString>SELECT Id FROM ApexCodeCoverage</queryString></query></env:Body></env:Envelope>
+    //23:04:54.329 (329271000)|CALLOUT_REQUEST|[2422]|query_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(queryString), queryString=SELECT Id FROM ApexCodeCoverage, queryString_type_info=(queryString, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //23:04:54.445 (445179000)|CALLOUT_RESPONSE|[2422]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><queryResponse><result><done>true</done><entityTypeName>ApexCodeCoverage</entityTypeName><queryLocator xsi:nil="true"/><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaANAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaA8AAK</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaA9AAK</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAAAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaABAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaACAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaADAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAEAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAFAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAGAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAHAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAIAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAJAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAKAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaALAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAMAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAOAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAPAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAQAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaARAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaASAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaATAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAUAA0</Id></records><records xsi:type="ApexCodeCoverage"><Id>714b0000007JaAVAA0</Id></records><size>24</size><totalSize>24</totalSize></result></queryResponse></soapenv:Body></soapenv:Envelope>
+    public class ApexCodeCoverageMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.queryResponse_element responseElement = new Api.queryResponse_element();
+            responseElement.result = new Api.QueryResult();
+            responseElement.result.records = new List<Api.ApexCodeCoverage>{new Api.ApexCodeCoverage()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void testApexCodeCoverage() {
+        Test.setMock(WebServiceMock.class, new ApexCodeCoverageMock());
+        Object result = new Api.Client().query('SELECT Id FROM ApexCodeCoverage');
+        System.assert(result instanceof Api.QueryResult);
+    }
 }
