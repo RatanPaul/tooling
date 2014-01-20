@@ -203,4 +203,23 @@
         System.assert(result instanceof List<Api.SaveResult>);
     }
     
+    //17:04:09.466 (466999000)|CALLOUT_REQUEST|[2448]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQOsEgWb60aKf1rtPw8w7VwwpvgHMsmyzDqlHtde1nz3NIpAgaXdTQcq0Y_I7nkUoM206qHd79kCphCbajpd3cYwdfQx4</sessionId></SessionHeader></env:Header><env:Body><upsert xmlns="urn:tooling.soap.sforce.com"><fieldName>Id</fieldName><entities><Id>00Nb0000007p4tE</Id></entities></upsert></env:Body></env:Envelope>
+    //17:04:09.467 (467097000)|CALLOUT_REQUEST|[2448]|upsert_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), entities=(sObject_x:[Id=00Nb0000007p4tE, Id_type_info=(Id, urn:tooling.soap.sforce.com, null, 1, 1, true), apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(fieldsToNull, Id), fieldsToNull=null, fieldsToNull_type_info=(fieldsToNull, urn:tooling.soap.sforce.com, null, 0, -1, true)]), entities_type_info=(entities, urn:tooling.soap.sforce.com, null, 0, -1, false), fieldName=Id, fieldName_type_info=(fieldName, urn:tooling.soap.sforce.com, null, 1, 1, false), field_order_type_info=(fieldName, entities)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //17:04:09.519 (519121000)|CALLOUT_RESPONSE|[2448]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sf="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><soapenv:Fault><faultcode>sf:INVALID_TYPE</faultcode><faultstring>INVALID_TYPE: Must send a concrete entity type.</faultstring><detail><sf:InvalidSObjectFault xsi:type="sf:InvalidSObjectFault"><sf:exceptionCode>INVALID_TYPE</sf:exceptionCode><sf:exceptionMessage>Must send a concrete entity type.</sf:exceptionMessage><sf:row>-1</sf:row><sf:column>-1</sf:column></sf:InvalidSObjectFault></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+    public class UpsertMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.upsertResponse_element responseElement = new Api.upsertResponse_element();
+            responseElement.result = new List<Api.UpsertResult>{new Api.UpsertResult()};
+            responseElement.result[0].errors = new List<Api.Error>{new Api.Error()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverUpsert() {
+        Test.setMock(WebServiceMock.class, new UpsertMock());
+        Api.sObject_x obj = new Api.sObject_x();
+        obj.Id = '00Nb0000007p4tE';
+        Object result = new Api.Client().upsert_x('Id', new List<Api.sObject_x>{obj});
+        System.assert(result instanceof List<Api.UpsertResult>);
+    }
 }
