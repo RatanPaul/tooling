@@ -314,4 +314,23 @@
         Object result = new Api.Client().describeSObjects(new List<String>{'CustomField'});
         System.assert(result instanceof List<Api.DescribeSObjectResult>);
     }
+    
+    //17:59:56.534 (534786000)|CALLOUT_REQUEST|[2578]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><describeWorkitemActions xmlns="urn:tooling.soap.sforce.com"><workitemIds>000000000000000AAA</workitemIds></describeWorkitemActions></env:Body></env:Envelope>
+    //17:59:56.534 (534864000)|CALLOUT_REQUEST|[2578]|describeWorkitemActions_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(workitemIds), workitemIds=(000000000000000AAA), workitemIds_type_info=(workitemIds, urn:tooling.soap.sforce.com, null, 0, -1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //17:59:56.706 (706727000)|CALLOUT_RESPONSE|[2578]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><describeWorkitemActionsResponse><result><errors><message>invalid cross reference id</message><statusCode>INVALID_CROSS_REFERENCE_KEY</statusCode></errors><success>false</success><targetObjectId xsi:nil="true"/><workitemId>000000000000000</workitemId></result></describeWorkitemActionsResponse></soapenv:Body></soapenv:Envelope>
+    public class DescribeWorkitemActionsMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.describeWorkitemActionsResponse_element responseElement = new Api.describeWorkitemActionsResponse_element();
+            responseElement.result = new List<Api.DescribeWorkitemActionResult>{new Api.DescribeWorkitemActionResult()};
+            responseElement.result[0].actions = new List<Api.AllowedWorkitemAction>{new Api.AllowedWorkitemAction()};
+            responseElement.result[0].errors = new List<Api.Error>{new Api.Error()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverDescribeWorkitemActions() {
+        Test.setMock(WebServiceMock.class, new DescribeWorkitemActionsMock());
+        Object result = new Api.Client().describeWorkitemActions(new List<String>{'000000000000000AAA'});
+        System.assert(result instanceof List<Api.DescribeWorkitemActionResult>);
+    }
 }
