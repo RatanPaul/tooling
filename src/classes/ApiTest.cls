@@ -241,7 +241,7 @@
     }
     
     //17:31:41.203 (203086000)|CALLOUT_REQUEST|[2494]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQOsEgWb60aKf1rtPw8w7VwwpvgHMsmyzDqlHtde1nz3NIpAgaXdTQcq0Y_I7nkUoM206qHd79kCphCbajpd3cYwdfQx4</sessionId></SessionHeader></env:Header><env:Body><getUpdated xmlns="urn:tooling.soap.sforce.com"><sObjectType>StaticResource</sObjectType><start>2014-01-20T17:31:41.648Z</start><end>2014-01-20T17:31:41.648Z</end></getUpdated></env:Body></env:Envelope>
-    //17:31:41.203 (203161000)|CALLOUT_REQUEST|[2494]|getUpdated_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), end_x=2014-01-20 17:31:41, end_x_type_info=(end, urn:tooling.soap.sforce.com, null, 1, 1, false), field_order_type_info=(sObjectType, start, end_x), sObjectType=StaticResource, sObjectType_type_info=(sObjectType, urn:tooling.soap.sforce.com, null, 1, 1, false), start=2014-01-20 17:31:41, start_type_info=(start, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+	//17:31:41.203 (203161000)|CALLOUT_REQUEST|[2494]|getUpdated_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), end_x=2014-01-20 17:31:41, end_x_type_info=(end, urn:tooling.soap.sforce.com, null, 1, 1, false), field_order_type_info=(sObjectType, start, end_x), sObjectType=StaticResource, sObjectType_type_info=(sObjectType, urn:tooling.soap.sforce.com, null, 1, 1, false), start=2014-01-20 17:31:41, start_type_info=(start, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
     //17:31:41.289 (289849000)|CALLOUT_RESPONSE|[2494]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><getUpdatedResponse><result><latestDateCovered>2014-01-20T17:31:00.000Z</latestDateCovered></result></getUpdatedResponse></soapenv:Body></soapenv:Envelope>
     public class GetUpdatedMock implements WebServiceMock {
         public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
@@ -258,8 +258,8 @@
     }
     
     //17:39:10.534 (534216000)|CALLOUT_REQUEST|[2515]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQOsEgWb60aKf1rtPw8w7VwwpvgHMsmyzDqlHtde1nz3NIpAgaXdTQcq0Y_I7nkUoM206qHd79kCphCbajpd3cYwdfQx4</sessionId></SessionHeader></env:Header><env:Body><invalidateSessions xmlns="urn:tooling.soap.sforce.com"><ArrayList>00Db0000000d6mj!AQwAQITRJjn7LVOb51nusnNi3LDgmbuG5lCAmaH1w7Yxu.rsdHijLTe83onPVZbf43BMv_iAg1wseNlhT2F7hVVhFuAIY9Qk</ArrayList></invalidateSessions></env:Body></env:Envelope>
-    //17:39:10.534 (534291000)|CALLOUT_REQUEST|[2515]|invalidateSessions_element:[ArrayList=(00Db0000000d6mj!AQwAQITRJjn7LVOb51nusnNi3LDgmbuG5lCAmaH1w7Yxu.rsdHijLTe83onPVZbf43BMv_iAg1wseNlhT2F7hVVhFuAIY9Qk), ArrayList_type_info=(ArrayList, urn:tooling.soap.sforce.com, null, 0, -1, false), apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(ArrayList)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
-    //17:39:10.603 (603448000)|CALLOUT_RESPONSE|[2515]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><invalidateSessionsResponse><result><success>true</success></result></invalidateSessionsResponse></soapenv:Body></soapenv:Envelope>
+	//17:39:10.534 (534291000)|CALLOUT_REQUEST|[2515]|invalidateSessions_element:[ArrayList=(00Db0000000d6mj!AQwAQITRJjn7LVOb51nusnNi3LDgmbuG5lCAmaH1w7Yxu.rsdHijLTe83onPVZbf43BMv_iAg1wseNlhT2F7hVVhFuAIY9Qk), ArrayList_type_info=(ArrayList, urn:tooling.soap.sforce.com, null, 0, -1, false), apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(ArrayList)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+	//17:39:10.603 (603448000)|CALLOUT_RESPONSE|[2515]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com"><soapenv:Body><invalidateSessionsResponse><result><success>true</success></result></invalidateSessionsResponse></soapenv:Body></soapenv:Envelope>
     public class InvalidateSessionsMock implements WebServiceMock {
         public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
             Api.invalidateSessionsResponse_element responseElement = new Api.invalidateSessionsResponse_element	();
@@ -273,5 +273,25 @@
         Test.setMock(WebServiceMock.class, new InvalidateSessionsMock());
         Object result = new Api.Client().invalidateSessions(new List<String>{UserInfo.getSessionId()});
         System.assert(result instanceof List<Api.InvalidateSessionsResult>);
+    }
+    
+    //17:46:25.470 (470225000)|CALLOUT_REQUEST|[2536]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><create xmlns="urn:tooling.soap.sforce.com"><sObjects><Id>00Nb0000007p4tE</Id></sObjects></create></env:Body></env:Envelope>
+    //17:46:25.470 (470339000)|CALLOUT_REQUEST|[2536]|create_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(sObjects), sObjects=(sObject_x:[Id=00Nb0000007p4tE, Id_type_info=(Id, urn:tooling.soap.sforce.com, null, 1, 1, true), apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(fieldsToNull, Id), fieldsToNull=null, fieldsToNull_type_info=(fieldsToNull, urn:tooling.soap.sforce.com, null, 0, -1, true)]), sObjects_type_info=(sObjects, urn:tooling.soap.sforce.com, null, 0, -1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //17:46:25.592 (592774000)|CALLOUT_RESPONSE|[2536]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sf="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><soapenv:Fault><faultcode>sf:INVALID_TYPE</faultcode><faultstring>INVALID_TYPE: Must send a concrete entity type.</faultstring><detail><sf:InvalidSObjectFault xsi:type="sf:InvalidSObjectFault"><sf:exceptionCode>INVALID_TYPE</sf:exceptionCode><sf:exceptionMessage>Must send a concrete entity type.</sf:exceptionMessage><sf:row>-1</sf:row><sf:column>-1</sf:column></sf:InvalidSObjectFault></detail></soapenv:Fault></soapenv:Body></soapenv:Envelope>
+    public class CreateMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.createResponse_element responseElement = new Api.createResponse_element	();
+            responseElement.result = new List<Api.SaveResult>{new Api.SaveResult()};
+            responseElement.result[0].errors = new List<Api.Error>{new Api.Error()};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void coverCreate() {
+        Test.setMock(WebServiceMock.class, new CreateMock());
+        Api.sObject_x obj = new Api.sObject_x();
+        obj.Id = '00Nb0000007p4tE';
+        Object result = new Api.Client().create(new List<Api.sObject_x>{obj});
+        System.assert(result instanceof List<Api.SaveResult>);
     }
 }
