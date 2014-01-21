@@ -491,7 +491,17 @@ global class Api {
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{};
     }
-    global class ApexExecutionOverlayAction {
+    global class ApexExecutionOverlayAction extends sObject_x {
+        //complex type
+        global String type_x = 'ApexExecutionOverlayAction';
+        private String[] type_x_att_info = new String[] {'xsi:type'};
+        
+        //hand-inherited from sObject_x
+        global String[] fieldsToNull;
+        global String Id;
+        private String[] fieldsToNull_type_info = new String[]{'fieldsToNull','urn:tooling.soap.sforce.com',null,'0','-1','true'};
+        private String[] Id_type_info = new String[]{'Id','urn:tooling.soap.sforce.com',null,'1','1','true'};
+        
         global String ActionScript;
         global String ActionScriptType;
         global Api.User_x CreatedBy;
@@ -529,7 +539,9 @@ global class Api {
         private String[] ScopeId_type_info = new String[]{'ScopeId','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] SystemModstamp_type_info = new String[]{'SystemModstamp','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
-        private String[] field_order_type_info = new String[]{'ActionScript','ActionScriptType','CreatedBy','CreatedById','CreatedDate','ExecutableEntity','ExecutableEntityId','ExpirationDate','IsDeleted','IsDumpingHeap','Iteration','LastModifiedBy','LastModifiedById','LastModifiedDate','Line','Scope','ScopeId','SystemModstamp'};
+        
+        //hand-prepended from sObject_x
+        private String[] field_order_type_info = new String[]{'fieldsToNull','Id','ActionScript','ActionScriptType','CreatedBy','CreatedById','CreatedDate','ExecutableEntity','ExecutableEntityId','ExpirationDate','IsDeleted','IsDumpingHeap','Iteration','LastModifiedBy','LastModifiedById','LastModifiedDate','Line','Scope','ScopeId','SystemModstamp'};
     }
     global class NumberValue {
         global Double value;
