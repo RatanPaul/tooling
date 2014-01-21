@@ -441,7 +441,14 @@
         public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
             Api.queryResponse_element responseElement = new Api.queryResponse_element();
             responseElement.result = new Api.QueryResult();
-            responseElement.result.records = new List<Api.ApexClassMember>{new Api.ApexClassMember()};
+            Api.ApexClassMember apexClassMember = new Api.ApexClassMember();
+            apexClassMember.ContentEntity = new Api.ApexClass();
+            apexClassMember.CreatedBy = new Api.User_x();
+            apexClassMember.LastModifiedBy = new Api.User_x();
+            apexClassMember.Metadata = new Api.ApexClassMetadata();
+            apexClassMember.MetadataContainer = new Api.MetadataContainer();
+            apexClassMember.SymbolTable = new Api.SymbolTable();
+            responseElement.result.records = new List<Api.ApexClassMember>{apexClassMember};
             response.put('response_x', responseElement);
         }
     }
