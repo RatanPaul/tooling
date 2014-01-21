@@ -415,7 +415,17 @@ global class Api {
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'field','format','label','name'};
     }
-    global class ApexPage {
+    global class ApexPage extends sObject_x {
+        //complex type
+        global String type_x = 'ApexPage';
+        private String[] type_x_att_info = new String[] {'xsi:type'};
+        
+        //hand-inherited from sObject_x
+        global String[] fieldsToNull;
+        global String Id;
+        private String[] fieldsToNull_type_info = new String[]{'fieldsToNull','urn:tooling.soap.sforce.com',null,'0','-1','true'};
+        private String[] Id_type_info = new String[]{'Id','urn:tooling.soap.sforce.com',null,'1','1','true'};
+        
         global Double ApiVersion;
         global String ControllerKey;
         global String ControllerType;
@@ -451,7 +461,9 @@ global class Api {
         private String[] NamespacePrefix_type_info = new String[]{'NamespacePrefix','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] SystemModstamp_type_info = new String[]{'SystemModstamp','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
-        private String[] field_order_type_info = new String[]{'ApiVersion','ControllerKey','ControllerType','CreatedBy','CreatedById','CreatedDate','Description','IsAvailableInTouch','IsConfirmationTokenRequired','LastModifiedBy','LastModifiedById','LastModifiedDate','Markup','MasterLabel','Name','NamespacePrefix','SystemModstamp'};
+        
+        //hand-prepended from sObject_x
+        private String[] field_order_type_info = new String[]{'fieldsToNull','Id','ApiVersion','ControllerKey','ControllerType','CreatedBy','CreatedById','CreatedDate','Description','IsAvailableInTouch','IsConfirmationTokenRequired','LastModifiedBy','LastModifiedById','LastModifiedDate','Markup','MasterLabel','Name','NamespacePrefix','SystemModstamp'};
     }
     global class queryResponse_element {
         global Api.QueryResult result;
