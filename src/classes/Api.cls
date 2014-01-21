@@ -2021,7 +2021,17 @@ global class Api {
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'debugLog'};
     }
-    global class ApexExecutionOverlayResult {
+    global class ApexExecutionOverlayResult extends sObject_x {
+        //complex type
+        global String type_x = 'ApexExecutionOverlayResult';
+        private String[] type_x_att_info = new String[] {'xsi:type'};
+        
+        //hand-inherited from sObject_x
+        global String[] fieldsToNull;
+        global String Id;
+        private String[] fieldsToNull_type_info = new String[]{'fieldsToNull','urn:tooling.soap.sforce.com',null,'0','-1','true'};
+        private String[] Id_type_info = new String[]{'Id','urn:tooling.soap.sforce.com',null,'1','1','true'};
+        
         global String ActionScript;
         global String ActionScriptType;
         global Api.ApexResult ApexResult;
@@ -2071,7 +2081,9 @@ global class Api {
         private String[] User_x_type_info = new String[]{'User','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] UserId_type_info = new String[]{'UserId','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
-        private String[] field_order_type_info = new String[]{'ActionScript','ActionScriptType','ApexResult','ClassName','CreatedBy','CreatedById','CreatedDate','ExpirationDate','HeapDump','IsDeleted','IsDumpingHeap','Iteration','LastModifiedBy','LastModifiedById','LastModifiedDate','Line','Namespace','OverlayResultLength','RequestedBy','RequestedById','SOQLResult','SystemModstamp','User_x','UserId'};
+        
+        //hand-prepended from sObject_x
+        private String[] field_order_type_info = new String[]{'fieldsToNull','Id','ActionScript','ActionScriptType','ApexResult','ClassName','CreatedBy','CreatedById','CreatedDate','ExpirationDate','HeapDump','IsDeleted','IsDumpingHeap','Iteration','LastModifiedBy','LastModifiedById','LastModifiedDate','Line','Namespace','OverlayResultLength','RequestedBy','RequestedById','SOQLResult','SystemModstamp','User_x','UserId'};
     }
     global class UserPreference {
         global String Preference;

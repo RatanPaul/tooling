@@ -551,5 +551,40 @@
         Object result = new Api.Client().create(new List<Api.ApexExecutionOverlayAction>{apexExecutionOverlayAction});
         System.assert(result instanceof List<Api.SaveResult>);
     }
+    
+    //00:46:35.354 (354029000)|CALLOUT_REQUEST|[2470]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><query xmlns="urn:tooling.soap.sforce.com"><queryString>SELECT Id FROM ApexExecutionOverlayResult</queryString></query></env:Body></env:Envelope>
+    //00:46:35.354 (354092000)|CALLOUT_REQUEST|[2470]|query_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(queryString), queryString=SELECT Id FROM ApexExecutionOverlayResult, queryString_type_info=(queryString, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //00:46:35.431 (431351000)|CALLOUT_RESPONSE|[2470]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><queryResponse><result><done>true</done><entityTypeName xsi:nil="true"/><queryLocator xsi:nil="true"/><size>0</size><totalSize>0</totalSize></result></queryResponse></soapenv:Body></soapenv:Envelope>
+    public class ApexExecutionOverlayResultMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.queryResponse_element responseElement = new Api.queryResponse_element();
+            responseElement.result = new Api.QueryResult();
+            Api.ApexExecutionOverlayResult apexExecutionOverlayResult = new Api.ApexExecutionOverlayResult();
+            apexExecutionOverlayResult.ApexResult = new Api.ApexResult();
+            apexExecutionOverlayResult.ApexResult.apexExecutionResult = new Api.ExecuteAnonymousResult();
+            apexExecutionOverlayResult.CreatedBy = new Api.User_x();
+            apexExecutionOverlayResult.HeapDump = new Api.HeapDump();
+            apexExecutionOverlayResult.HeapDump.extents = new List<Api.TypeExtent>{new Api.TypeExtent()};
+            apexExecutionOverlayResult.HeapDump.extents[0].definition = new List<Api.AttributeDefinition>{new Api.AttributeDefinition()};
+            apexExecutionOverlayResult.HeapDump.extents[0].extent = new List<Api.HeapAddress>{new Api.HeapAddress()};
+            apexExecutionOverlayResult.HeapDump.extents[0].extent[0].value = new Api.StateValue();
+            apexExecutionOverlayResult.LastModifiedBy = new Api.User_x();
+            apexExecutionOverlayResult.RequestedBy = new Api.User_x();
+            apexExecutionOverlayResult.SOQLResult = new Api.SOQLResult();
+            apexExecutionOverlayResult.SOQLResult.queryMetadata = new Api.QueryResultMetadata();
+            apexExecutionOverlayResult.SOQLResult.queryResult = new List<Api.MapValue>{new Api.MapValue()};
+            apexExecutionOverlayResult.SOQLResult.queryResult[0].entry = new List<Api.MapEntry>{new Api.MapEntry()};
+            apexExecutionOverlayResult.SOQLResult.queryResult[0].entry[0].value = new Api.StateValue();
+            apexExecutionOverlayResult.User_x = new Api.Name();
+            responseElement.result.records = new List<Api.ApexExecutionOverlayResult>{apexExecutionOverlayResult};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void testApexExecutionOverlayResult() {
+        Test.setMock(WebServiceMock.class, new ApexCodeCoverageMock());
+        Object result = new Api.Client().query('SELECT Id FROM ApexExecutionOverlayResult');
+        System.assert(result instanceof Api.QueryResult);
+    }
 
 }
