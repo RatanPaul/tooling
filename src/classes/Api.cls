@@ -909,7 +909,17 @@ global class Api {
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'ApexClass','ApexClassId','CreatedBy','CreatedById','CreatedDate','ExtendedStatus','ParentJobId','Status','SystemModstamp'};
     }
-    global class ApexCodeCoverageAggregate {
+    global class ApexCodeCoverageAggregate extends sObject_x {
+        //complex type
+        global String type_x = 'ApexCodeCoverageAggregate';
+        private String[] type_x_att_info = new String[] {'xsi:type'};
+        
+        //hand-inherited from sObject_x
+        global String[] fieldsToNull;
+        global String Id;
+        private String[] fieldsToNull_type_info = new String[]{'fieldsToNull','urn:tooling.soap.sforce.com',null,'0','-1','true'};
+        private String[] Id_type_info = new String[]{'Id','urn:tooling.soap.sforce.com',null,'1','1','true'};
+        
         global Api.Name ApexClassOrTrigger;
         global String ApexClassOrTriggerId;
         global Api.Coverage Coverage;
@@ -939,7 +949,9 @@ global class Api {
         private String[] NumLinesUncovered_type_info = new String[]{'NumLinesUncovered','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] SystemModstamp_type_info = new String[]{'SystemModstamp','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
-        private String[] field_order_type_info = new String[]{'ApexClassOrTrigger','ApexClassOrTriggerId','Coverage','CoverageLastModifiedDate','CreatedBy','CreatedById','CreatedDate','IsDeleted','LastModifiedBy','LastModifiedById','LastModifiedDate','NumLinesCovered','NumLinesUncovered','SystemModstamp'};
+        
+        //hand-prepended from sObject_x
+        private String[] field_order_type_info = new String[]{'fieldsToNull','Id','ApexClassOrTrigger','ApexClassOrTriggerId','Coverage','CoverageLastModifiedDate','CreatedBy','CreatedById','CreatedDate','IsDeleted','LastModifiedBy','LastModifiedById','LastModifiedDate','NumLinesCovered','NumLinesUncovered','SystemModstamp'};
     }
     global class describeSObjects_element {
         global String[] types;

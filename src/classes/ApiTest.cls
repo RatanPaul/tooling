@@ -482,4 +482,27 @@
         Object result = new Api.Client().query('SELECT Id FROM ApexCodeCoverage');
         System.assert(result instanceof Api.QueryResult);
     }
+    
+    //00:16:42.409 (409119000)|CALLOUT_REQUEST|[2434]|<?xml version="1.0" encoding="UTF-8"?><env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><env:Header><SessionHeader xmlns="urn:tooling.soap.sforce.com"><sessionId>00Db0000000d6mj!AQwAQIGQ6U70E7eCp4z1WwWJQbiLaJI3zEcqlRn2X2s.PS7HICc3AbMkMEAfTNwcOCxQfd0gPW55t4cjhCd2nX0Xo9JDblhA</sessionId></SessionHeader></env:Header><env:Body><query xmlns="urn:tooling.soap.sforce.com"><queryString>SELECT Id FROM ApexCodeCoverageAggregate</queryString></query></env:Body></env:Envelope>
+    //00:16:42.409 (409181000)|CALLOUT_REQUEST|[2434]|query_element:[apex_schema_type_info=(urn:tooling.soap.sforce.com, true, false), field_order_type_info=(queryString), queryString=SELECT Id FROM ApexCodeCoverageAggregate, queryString_type_info=(queryString, urn:tooling.soap.sforce.com, null, 1, 1, false)]::SFDC_STACK_DEPTH=1 SOAPAction="" User-Agent=SFDC-Callout/29.0 Accept=text/xml Content-Type=text/xml; charset=UTF-8 
+    //00:16:42.533 (533478000)|CALLOUT_RESPONSE|[2434]|<?xml version="1.0" encoding="UTF-8"?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="urn:tooling.soap.sforce.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><soapenv:Body><queryResponse><result><done>true</done><entityTypeName>ApexCodeCoverageAggregate</entityTypeName><queryLocator xsi:nil="true"/><records xsi:type="ApexCodeCoverageAggregate"><Id>715b0000005uOqVAAU</Id></records><records xsi:type="ApexCodeCoverageAggregate"><Id>715b0000005uOqWAAU</Id></records><size>2</size><totalSize>2</totalSize></result></queryResponse></soapenv:Body></soapenv:Envelope>
+    public class ApexCodeCoverageAggregateMock implements WebServiceMock {
+        public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
+            Api.queryResponse_element responseElement = new Api.queryResponse_element();
+            responseElement.result = new Api.QueryResult();
+            Api.ApexCodeCoverageAggregate apexCodeCoverageAggregate = new Api.ApexCodeCoverageAggregate();
+            apexCodeCoverageAggregate.ApexClassOrTrigger = new Api.Name();
+            apexCodeCoverageAggregate.Coverage = new Api.Coverage();
+            apexCodeCoverageAggregate.CreatedBy = new Api.User_x();
+            apexCodeCoverageAggregate.LastModifiedBy = new Api.User_x();
+            responseElement.result.records = new List<Api.ApexCodeCoverageAggregate>{apexCodeCoverageAggregate};
+            response.put('response_x', responseElement);
+        }
+    }
+    
+    static testMethod void testApexCodeCoverageAggregate() {
+        Test.setMock(WebServiceMock.class, new ApexCodeCoverageAggregateMock());
+        Object result = new Api.Client().query('SELECT Id FROM ApexCodeCoverageAggregate');
+        System.assert(result instanceof Api.QueryResult);
+    }
 }
