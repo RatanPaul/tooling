@@ -466,7 +466,13 @@
         public void doInvoke(Object stub, Object request, Map<String, Object> response, String endpoint, String soapAction, String requestName, String responseNS, String responseName, String responseType) {
             Api.queryResponse_element responseElement = new Api.queryResponse_element();
             responseElement.result = new Api.QueryResult();
-            responseElement.result.records = new List<Api.ApexCodeCoverage>{new Api.ApexCodeCoverage()};
+            Api.ApexCodeCoverage apexCodeCoverage = new Api.ApexCodeCoverage();
+            apexCodeCoverage.ApexClassOrTrigger = new Api.Name();
+            apexCodeCoverage.ApexTestClass = new Api.ApexClass();
+            apexCodeCoverage.Coverage = new Api.Coverage();
+            apexCodeCoverage.CreatedBy = new Api.User_x();
+            apexCodeCoverage.LastModifiedBy = new Api.User_x();
+            responseElement.result.records = new List<Api.ApexCodeCoverage>{apexCodeCoverage};
             response.put('response_x', responseElement);
         }
     }
