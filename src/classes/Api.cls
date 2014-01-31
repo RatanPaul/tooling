@@ -1131,7 +1131,17 @@ global class Api {
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'type_x'};
     }
-    global class ApexTrigger {
+    global class ApexTrigger extends sObject_x {
+        //complex type
+        global String type_x = 'ApexTrigger';
+        private String[] type_x_att_info = new String[] {'xsi:type'};
+        
+        //hand-inherited from sObject_x
+        global String[] fieldsToNull;
+        global String Id;
+        private String[] fieldsToNull_type_info = new String[]{'fieldsToNull','urn:tooling.soap.sforce.com',null,'0','-1','true'};
+        private String[] Id_type_info = new String[]{'Id','urn:tooling.soap.sforce.com',null,'1','1','true'};
+        
         global Double ApiVersion;
         global String Body;
         global Double BodyCrc;
@@ -1181,7 +1191,9 @@ global class Api {
         private String[] UsageBeforeUpdate_type_info = new String[]{'UsageBeforeUpdate','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] UsageIsBulk_type_info = new String[]{'UsageIsBulk','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
-        private String[] field_order_type_info = new String[]{'ApiVersion','Body','BodyCrc','CreatedBy','CreatedById','CreatedDate','IsValid','LastModifiedBy','LastModifiedById','LastModifiedDate','LengthWithoutComments','Name','NamespacePrefix','Status','SystemModstamp','TableEnumOrId','UsageAfterDelete','UsageAfterInsert','UsageAfterUndelete','UsageAfterUpdate','UsageBeforeDelete','UsageBeforeInsert','UsageBeforeUpdate','UsageIsBulk'};
+        
+        //hand-prepended from sObject_x
+        private String[] field_order_type_info = new String[]{'fieldsToNull','Id','ApiVersion','Body','BodyCrc','CreatedBy','CreatedById','CreatedDate','IsValid','LastModifiedBy','LastModifiedById','LastModifiedDate','LengthWithoutComments','Name','NamespacePrefix','Status','SystemModstamp','TableEnumOrId','UsageAfterDelete','UsageAfterInsert','UsageAfterUndelete','UsageAfterUpdate','UsageBeforeDelete','UsageBeforeInsert','UsageBeforeUpdate','UsageIsBulk'};
     }
     global class invalidateSessionsResponse_element {
         global Api.InvalidateSessionsResult[] result;
