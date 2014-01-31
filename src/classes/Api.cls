@@ -305,7 +305,7 @@ global class Api {
     }
     global class ApexPageMember extends sObject_x {
         //complex type
-        global String type_x = 'ApexPage';
+        global String type_x = 'ApexPageMember';
         private String[] type_x_att_info = new String[] {'xsi:type'};
         
         //hand-inherited from sObject_x
