@@ -1403,7 +1403,17 @@ global class Api {
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
         private String[] field_order_type_info = new String[]{'apiVersion','description','label','packageVersions'};
     }
-    global class ContainerAsyncRequest {
+    global class ContainerAsyncRequest extends sObject_x {
+        //complex type
+        global String type_x = 'ContainerAsyncRequest';
+        private String[] type_x_att_info = new String[] {'xsi:type'};
+        
+        //hand-inherited from sObject_x
+        global String[] fieldsToNull;
+        global String Id;
+        private String[] fieldsToNull_type_info = new String[]{'fieldsToNull','urn:tooling.soap.sforce.com',null,'0','-1','true'};
+        private String[] Id_type_info = new String[]{'Id','urn:tooling.soap.sforce.com',null,'1','1','true'};
+        
         global String CompilerErrors;
         global Api.User_x CreatedBy;
         global String CreatedById;
@@ -1439,7 +1449,9 @@ global class Api {
         private String[] State_type_info = new String[]{'State','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] SystemModstamp_type_info = new String[]{'SystemModstamp','urn:tooling.soap.sforce.com',null,'0','1','true'};
         private String[] apex_schema_type_info = new String[]{'urn:tooling.soap.sforce.com','true','false'};
-        private String[] field_order_type_info = new String[]{'CompilerErrors','CreatedBy','CreatedById','CreatedDate','ErrorMsg','IsCheckOnly','IsDeleted','IsRunTests','LastModifiedBy','LastModifiedById','LastModifiedDate','MetadataContainer','MetadataContainerId','MetadataContainerMember','MetadataContainerMemberId','State','SystemModstamp'};
+        
+        //hand-prepended from sObject_x
+        private String[] field_order_type_info = new String[]{'fieldsToNull','Id','CompilerErrors','CreatedBy','CreatedById','CreatedDate','ErrorMsg','IsCheckOnly','IsDeleted','IsRunTests','LastModifiedBy','LastModifiedById','LastModifiedDate','MetadataContainer','MetadataContainerId','MetadataContainerMember','MetadataContainerMemberId','State','SystemModstamp'};
     }
     global class DeletedRecord {
         global DateTime deletedDate;
