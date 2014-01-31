@@ -684,6 +684,10 @@
         Test.setMock(WebServiceMock.class, new ApexTriggerMemberMock());
         Api.ApexTriggerMember apexTriggerMember = new Api.ApexTriggerMember();
         apexTriggerMember.Body = 'trigger TestTrigger on Account (before insert) {}';
+        apexTriggerMember.ContentEntity = new Api.ApexTrigger();
+        apexTriggerMember.Metadata = new Api.ApexTriggerMetadata();
+        apexTriggerMember.MetadataContainer = new Api.MetadataContainer();
+        apexTriggerMember.SymbolTable = new Api.SymbolTable();
         Object result = new Api.Client().create(new List<Api.ApexTriggerMember>{apexTriggerMember});
         System.assert(result instanceof List<Api.SaveResult>);
     }
@@ -707,7 +711,6 @@
         containerAsyncRequest.MetadataContainer = new Api.MetadataContainer();
         containerAsyncRequest.MetadataContainerMember = new Api.MetadataContainerMember();
         containerAsyncRequest.MetadataContainerMember.ContentEntity = new Api.Name();
-        
         Object result = new Api.Client().create(new List<Api.ContainerAsyncRequest>{containerAsyncRequest});
         System.assert(result instanceof List<Api.SaveResult>);
     }
