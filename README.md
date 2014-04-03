@@ -3,7 +3,7 @@ Tooling API bindings for Apex
 
 This package provides an Apex entry point into the Salesforce Tooling API.
 
-Install from the [AppExchange](http://appexchange.salesforce.com/) then try these examples:
+[Install the package](http://appexchange.salesforce.com/) then try:
 -------------------------------------------------------------------------------------------
 
 **1. Running arbitrary Apex code:**
